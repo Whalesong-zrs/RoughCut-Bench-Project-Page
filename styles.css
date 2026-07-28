@@ -182,11 +182,18 @@ video {
 .author-list {
   max-width: 920px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2px 17px;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
   color: #34475a;
   font-size: 14px;
+}
+
+.author-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2px 20px;
 }
 
 .author-list sup {
@@ -194,13 +201,6 @@ video {
   color: var(--blue);
   font-size: 0.68em;
   font-weight: 800;
-}
-
-.author-list span:not(:last-child)::after {
-  content: "·";
-  position: relative;
-  left: 9px;
-  color: #a5b0bb;
 }
 
 .affiliations {
@@ -242,14 +242,18 @@ video {
   grid-template-rows: 20px 15px;
   column-gap: 9px;
   align-items: center;
+  align-content: center;
+  justify-content: center;
   color: var(--ink);
   background: #fff;
-  text-align: left;
+  text-align: center;
 }
 
 .resource-button svg {
   width: 18px;
+  height: 18px;
   grid-row: 1 / span 2;
+  align-self: center;
   color: var(--blue);
 }
 

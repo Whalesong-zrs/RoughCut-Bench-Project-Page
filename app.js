@@ -404,7 +404,7 @@ function renderSpeechCase(caseData, category) {
 
   const grid = makeElement("div", "transcript-grid");
   grid.append(
-    makeTranscriptPanel("Original ASR", caseData.originalSegments),
+    makeTranscriptPanel("Original ASR excerpt", caseData.originalSegments),
     makeTranscriptPanel("Professional Reference", caseData.referenceTranscript),
     makeTranscriptPanel(caseData.model || "Model Output", caseData.modelTranscript),
   );
