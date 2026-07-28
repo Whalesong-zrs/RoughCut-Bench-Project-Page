@@ -377,6 +377,47 @@ function makeTranscriptPanel(title, content) {
   return panel;
 }
 
+function makeModelTracePanel(caseData) {
+  const panel = makeElement("article", "transcript-panel model-trace-panel");
+  panel.append(makeElement("h4", null, caseData.model || "Model Output"));
+
+  const body = makeElement("div", "transcript-text model-trace-body");
+  body.append(makeElement("h5", "trace-heading", "Model edit trace"));
+
+  (caseData.modelEdits || []).forEach((edit) => {
+    const rawType = (edit.type || "").toLowerCase();
+    const displayType = rawType === "c" ? "rm" : rawType;
+    const label = rawType === "c" ? "RM→R" : rawType.toUpperCase();
+    const item = makeElement("div", `edit-trace-item trace-${displayType}`);
+    const itemHeader = makeElement("div", "edit-trace-header");
+    itemHeader.append(
+      makeElement("span", `trace-label label-${displayType}`, label),
+      makeElement("span", "trace-action", rawType === "c" ? "Replaced" : "Removed"),
+    );
+    item.append(itemHeader, makeElement("p", "edit-trace-copy", edit.text));
+
+    if (edit.kept) {
+      const retained = makeElement("div", "edit-kept");
+      retained.append(
+        makeElement("span", "trace-label label-r", "R"),
+        makeElement("span", null, edit.kept),
+      );
+      item.append(retained);
+    }
+    body.append(item);
+  });
+
+  body.append(makeElement("h5", "trace-heading cleaned-heading", "Cleaned transcript"));
+  const cleaned = makeElement("div", "retained-output");
+  cleaned.append(
+    makeElement("span", "trace-label label-r", "R"),
+    makeElement("p", null, caseData.modelTranscript || "Transcript pending release."),
+  );
+  body.append(cleaned);
+  panel.append(body);
+  return panel;
+}
+
 function renderSpeechCase(caseData, category) {
   const fragment = document.createDocumentFragment();
   fragment.append(makeCaseHeader(caseData, category));
@@ -403,7 +444,7 @@ function renderSpeechCase(caseData, category) {
   grid.append(
     makeTranscriptPanel("Original ASR with annotations", caseData.originalSegments),
     makeTranscriptPanel("Professional Reference", caseData.referenceTranscript),
-    makeTranscriptPanel(caseData.model || "Model Output", caseData.modelTranscript),
+    makeModelTracePanel(caseData),
   );
   fragment.append(legend, metricChips, grid);
   return fragment;

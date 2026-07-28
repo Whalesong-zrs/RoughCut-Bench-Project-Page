@@ -2,11 +2,11 @@
   "category": {
     "id": "speech-cleanup-cases",
     "label": "Speech Cleanup",
-    "summary": "Complete transcript-cleanup cases covering the annotated operations.",
+    "summary": "High-alignment transcript-cleanup cases with complete inputs and outputs.",
     "cases": [
       {
         "id": "beauty-im",
-        "title": "Beauty tutorial",
+        "title": "Concealer tutorial",
         "scenario": "Beauty/Fashion",
         "model": "Gemini 3.0 Pro",
         "privacyReviewed": true,
@@ -14,18 +14,295 @@
         "focus": "IM · RM→R · D",
         "originalSegments": [
           {
-            "text": "so, ah, yeah, let me just take a sip of coffee. hmm. and",
+            "text": "but ",
+            "type": "d"
+          },
+          {
+            "text": "like,",
             "type": "im"
           },
           {
-            "text": " let's get right on into it. "
+            "text": " I don't know some of the bigger channels. so you should share this video or like comment on people's videos and tell them to do this if you like this video. ",
+            "type": "d"
           },
           {
-            "text": "OK.",
+            "text": "um,",
             "type": "im"
           },
           {
-            "text": " so the first thing I'm going to do, "
+            "text": " next I'm taking the tart shape tape and placing that under my eye to conceal this is light sand and also down my nose forehead chin to highlight. and then I just do the same thing with my sponge really push and getting all those crevices. I "
+          },
+          {
+            "text": "kind of",
+            "type": "im"
+          },
+          {
+            "text": " carry this portion to the sides where I have some discoloration. "
+          },
+          {
+            "text": "I always I don't say I guess I wouldn't say always, but",
+            "type": "rm"
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "I",
+            "type": "r"
+          },
+          {
+            "text": " try to keep the under eye portion blending out process till the end'cause the longer it sits under there it dries up a little bit and gives you more coverage. so I prefer "
+          },
+          {
+            "text": "like",
+            "type": "im"
+          },
+          {
+            "text": " more of a medium light coverage down here and then really full coverage under the eyes. so that's why I blend that part out last "
+          },
+          {
+            "text": "hello. good morning. how are you? morning. good. I'm filming a video. that's OK. what's up? I have a quick question for you ",
+            "type": "d"
+          },
+          {
+            "text": "on a",
+            "type": "rm"
+          },
+          {
+            "text": " ",
+            "type": "d"
+          },
+          {
+            "text": "on a picture.",
+            "type": "r"
+          },
+          {
+            "text": " ",
+            "type": "d"
+          },
+          {
+            "text": "a picture. I've got a picture.",
+            "type": "rm"
+          },
+          {
+            "text": " I'm trying to send a picture to someone. I'll explain it to you later. it's a screenshot. OK. and it it shows up really small and you always have to go click on the top right to view actual size. I wanna save it. can I save it at the. larger size. ",
+            "type": "d"
+          },
+          {
+            "text": "um, well,",
+            "type": "im"
+          },
+          {
+            "text": " have you tried save as you might have options? ",
+            "type": "d"
+          },
+          {
+            "text": "yeah,",
+            "type": "im"
+          },
+          {
+            "text": " but it always goes back.",
+            "type": "d"
+          }
+        ],
+        "referenceTranscript": "next I'm taking the tart shape tape and placing that under my eye to conceal this is light sand and also down my nose forehead chin to highlight. and then I just do the same thing with my sponge really push and getting all those crevices. I carry this portion to the sides where I have some discoloration. I try to keep the under eye portion blending out process till the end'cause the longer it sits under there it dries up a little bit and gives you more coverage. so I prefer more of a medium light coverage down here and then really full coverage under the eyes. so that's why I blend that part out last",
+        "modelEdits": [
+          {
+            "type": "im",
+            "text": "but like, ",
+            "kept": ""
+          },
+          {
+            "type": "d",
+            "text": "I don't know some of the bigger channels. so you should share this video or like comment on people's videos and tell them to do this if you like this video. ",
+            "kept": ""
+          },
+          {
+            "type": "im",
+            "text": "um, ",
+            "kept": ""
+          },
+          {
+            "type": "im",
+            "text": "kind of ",
+            "kept": ""
+          },
+          {
+            "type": "rm",
+            "text": "I always I don't say I guess I wouldn't say always, but ",
+            "kept": "I"
+          },
+          {
+            "type": "im",
+            "text": " like ",
+            "kept": ""
+          },
+          {
+            "type": "im",
+            "text": "so ",
+            "kept": ""
+          },
+          {
+            "type": "d",
+            "text": " hello. good morning. how are you? morning. good. I'm filming a video. that's OK. what's up? I have a quick question for you on a on a picture. a picture. I've got a picture. I'm trying to send a picture to someone. I'll explain it to you later. it's a screenshot. OK. and it it shows up really small and you always have to go click on the top right to view actual size. I wanna save it. can I save it at the. larger size. um, well, have you tried save as you might have options? yeah, but it always goes back.",
+            "kept": ""
+          }
+        ],
+        "modelTranscript": "next I'm taking the tart shape tape and placing that under my eye to conceal this is light sand and also down my nose forehead chin to highlight. and then I just do the same thing with my sponge really push and getting all those crevices. I carry this portion to the sides where I have some discoloration. I try to keep the under eye portion blending out process till the end'cause the longer it sits under there it dries up a little bit and gives you more coverage. so I prefer more of a medium light coverage down here and then really full coverage under the eyes. that's why I blend that part out last.",
+        "metrics": {
+          "IM F1": 1.0,
+          "RM→R Succ.": 1.0,
+          "D F1": 0.996
+        }
+      },
+      {
+        "id": "qa-rm",
+        "title": "Reflective monologue",
+        "scenario": "Podcast/Q&A",
+        "model": "Gemini 3.0 Pro",
+        "privacyReviewed": true,
+        "privacyNote": "Complete transcript reviewed for public display.",
+        "focus": "IM · RM→R · D",
+        "originalSegments": [
+          {
+            "text": "uh",
+            "type": "im"
+          },
+          {
+            "text": ", man, this life is, "
+          },
+          {
+            "text": "uh,",
+            "type": "im"
+          },
+          {
+            "text": " life is hard, dude. it's really hard. often times "
+          },
+          {
+            "text": "I,",
+            "type": "rm"
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "I",
+            "type": "r"
+          },
+          {
+            "text": " think we're occupying our time in ways that maybe is not what we wanna be doing. I'm trying to get back to a place where things feel more in line with who I am and what I enjoy, "
+          },
+          {
+            "text": "you know,",
+            "type": "im"
+          },
+          {
+            "text": " what brings me happiness and fulfillment and stuff like this does, "
+          },
+          {
+            "text": "you know,",
+            "type": "im"
+          },
+          {
+            "text": " right before "
+          },
+          {
+            "text": "I,",
+            "type": "rm"
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "I",
+            "type": "r"
+          },
+          {
+            "text": " started recording this, "
+          },
+          {
+            "text": "I,",
+            "type": "rm"
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "I",
+            "type": "r"
+          },
+          {
+            "text": " felt like this massive urgency to just release something out of my body. and "
+          },
+          {
+            "text": "I don't,",
+            "type": "rm"
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "I don't",
+            "type": "r"
+          },
+          {
+            "text": " speak often. if you know who I am in person, you know that "
+          },
+          {
+            "text": "I'm very",
+            "type": "rm"
+          },
+          {
+            "text": ", "
+          },
+          {
+            "text": "uh,",
+            "type": "im"
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "I'm,",
+            "type": "rm"
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "I'm pretty",
+            "type": "r"
+          },
+          {
+            "text": " reserved. as much as "
+          },
+          {
+            "text": "I,",
+            "type": "rm"
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "I",
+            "type": "r"
+          },
+          {
+            "text": " wanna be "
+          },
+          {
+            "text": "kind of, you know,",
+            "type": "im"
+          },
+          {
+            "text": " more personable and, "
+          },
+          {
+            "text": "uh,",
+            "type": "im"
+          },
+          {
+            "text": " communicative. "
           },
           {
             "text": "I'm,",
@@ -39,210 +316,14 @@
             "type": "r"
           },
           {
-            "text": " going to do my face first. "
+            "text": " pretty quiet. "
           },
           {
-            "text": "I'm not going to do ",
+            "text": "and ",
             "type": "d"
           },
           {
-            "text": "like",
-            "type": "im"
-          },
-          {
-            "text": " a super intense eye look. ",
-            "type": "d"
-          },
-          {
-            "text": "I mean,",
-            "type": "im"
-          },
-          {
-            "text": " I wanna do a good look. we're gonna do the whole eyeshadow, lashes and everything, but I'm gonna try and keep it somewhat simple so I shouldn't need to worry about fallout or anything like that. so I am going to start with my face. ",
-            "type": "d"
-          },
-          {
-            "text": "and so",
-            "type": "im"
-          },
-          {
-            "text": " I'm using the Maybelline Master Prime Blur and Illuminating primer. and I take about this much and rub that all in. I really love this primer. "
-          },
-          {
-            "text": "my favorite has been the Becca backlight priming filter, but I ran out of that one. ",
-            "type": "d"
-          },
-          {
-            "text": "um,",
-            "type": "im"
-          },
-          {
-            "text": " I'm probably gonna pick up another Becca backlight priming filter during the Ulta 21 Days of beauty. it's going on sale sometime this week, I think. ",
-            "type": "d"
-          },
-          {
-            "text": "um,",
-            "type": "im"
-          },
-          {
-            "text": " that's another video if you're new to my channel and you get bored during this. hopefully this isn't boring, ",
-            "type": "d"
-          },
-          {
-            "text": "but I don't know.",
-            "type": "im"
-          },
-          {
-            "text": " I'm just ",
-            "type": "d"
-          },
-          {
-            "text": "like",
-            "type": "im"
-          },
-          {
-            "text": " worried that it's gonna be boring. ",
-            "type": "d"
-          },
-          {
-            "text": "um,",
-            "type": "im"
-          },
-          {
-            "text": " I made an Ulta 21 Days of Beauty Sale guide video so you could check that out too. OK.",
-            "type": "d"
-          }
-        ],
-        "referenceTranscript": "let's get right on into it. so the first thing I'm going to do, I'm going to do my face first. I'm using the Maybelline Master Prime Blur and Illuminating primer. and I take about this much and rub that all in. I really love this primer.",
-        "modelTranscript": "let's get right on into it. The first thing I'm going to do, I'm going to do my face first. I'm not going to do a super intense eye look. I wanna do a good look. we're gonna do the whole eyeshadow, lashes and everything, but I'm gonna try and keep it somewhat simple so I shouldn't need to worry about fallout. I am going to start with my face. I'm using the Maybelline Master Prime Blur and Illuminating primer. and I take about this much and rub that all in. I really love this primer. my favorite has been the Becca backlight priming filter, but I ran out of that one. I'm probably gonna pick up another Becca backlight priming filter during the Ulta 21 Days of beauty. it's going on sale sometime this week.",
-        "metrics": {}
-      },
-      {
-        "id": "qa-rm",
-        "title": "Reflective monologue",
-        "scenario": "Podcast/Q&A",
-        "model": "Gemini 3.0 Pro",
-        "privacyReviewed": true,
-        "privacyNote": "Complete transcript reviewed for public display.",
-        "focus": "IM · RM→R · D",
-        "originalSegments": [
-          {
-            "text": "and "
-          },
-          {
-            "text": "that's, that's been the,",
-            "type": "rm"
-          },
-          {
-            "text": " "
-          },
-          {
-            "text": "that's been the",
-            "type": "r"
-          },
-          {
-            "text": " "
-          },
-          {
-            "text": "the",
-            "type": "rm"
-          },
-          {
-            "text": " message is I gotta try. "
-          },
-          {
-            "text": "you know,",
-            "type": "im"
-          },
-          {
-            "text": " everyday is a new day. if one day you try and you don't feel like it was good enough, "
-          },
-          {
-            "text": "well",
-            "type": "im"
-          },
-          {
-            "text": ", you can go to bed and you'll try again the next day. there was a quote that I read, "
-          },
-          {
-            "text": "uh,",
-            "type": "im"
-          },
-          {
-            "text": " a little while back and it said, all you gotta focus on is the next 24 hours. and if it's not this 24 hours, just focus on the next hour. if it's not the next hour, just the next 10 minutes. and trying to think back to that, "
-          },
-          {
-            "text": "that advice",
-            "type": "rm"
-          },
-          {
-            "text": ", "
-          },
-          {
-            "text": "that message",
-            "type": "r"
-          },
-          {
-            "text": ", when I remember about "
-          },
-          {
-            "text": "it, it,",
-            "type": "rm"
-          },
-          {
-            "text": " "
-          },
-          {
-            "text": "it",
-            "type": "r"
-          },
-          {
-            "text": " saves me, "
-          },
-          {
-            "text": "right",
-            "type": "im"
-          },
-          {
-            "text": "? "
-          },
-          {
-            "text": "you know,",
-            "type": "im"
-          },
-          {
-            "text": " I have a lot that "
-          },
-          {
-            "text": "I'm,",
-            "type": "im"
-          },
-          {
-            "text": " I feel like I'm kind of stressed about in the next month, 2, 3, whatever. but "
-          },
-          {
-            "text": "it's,",
-            "type": "rm"
-          },
-          {
-            "text": " "
-          },
-          {
-            "text": "it's",
-            "type": "r"
-          },
-          {
-            "text": " fine. "
-          },
-          {
-            "text": "you know,",
-            "type": "im"
-          },
-          {
-            "text": " it's alright'cause what I'm doing right now is this. I'm chilling. "
-          },
-          {
-            "text": "I'm just,",
+            "text": "that's, ",
             "type": "rm"
           },
           {
@@ -250,284 +331,968 @@
             "type": "d"
           },
           {
-            "text": "I'm just",
+            "text": "that's",
             "type": "r"
           },
           {
-            "text": " chatting, having a good time with you. ",
+            "text": " who I've always been my entire life since probably the moment I was born. I can remember ",
             "type": "d"
-          },
-          {
-            "text": "um,",
-            "type": "im"
-          },
-          {
-            "text": " drinking my espresso tonic. I'm gonna play some video games after this. so that's gonna be fun. ",
-            "type": "d"
-          },
-          {
-            "text": "um, yeah,",
-            "type": "im"
-          },
-          {
-            "text": " I think we gotta try. even if you feel like it's too late, "
-          },
-          {
-            "text": "it's not",
-            "type": "r"
-          },
-          {
-            "text": ", "
-          },
-          {
-            "text": "it's not.",
-            "type": "rm"
-          },
-          {
-            "text": " "
-          },
-          {
-            "text": "um, yeah, I don't know if there's anything else I gotta say. just that,",
-            "type": "im"
-          },
-          {
-            "text": " just remember "
-          },
-          {
-            "text": "it's",
-            "type": "rm"
-          },
-          {
-            "text": ", "
-          },
-          {
-            "text": "it's",
-            "type": "r"
-          },
-          {
-            "text": " not too late. I said this in my do it for yourself video, but, "
-          },
-          {
-            "text": "you know,",
-            "type": "im"
-          },
-          {
-            "text": " whatever it is that you're being called to do, if you wanna pick up your paintbrush, "
-          },
-          {
-            "text": "um,",
-            "type": "im"
-          },
-          {
-            "text": " put pen to paper grab your camera, hit record "
-          },
-          {
-            "text": "just do it",
-            "type": "rm"
-          },
-          {
-            "text": " "
-          },
-          {
-            "text": "just do it",
-            "type": "r"
-          },
-          {
-            "text": " "
-          },
-          {
-            "text": "I",
-            "type": "d"
-          },
-          {
-            "text": ", the only thing you got to lose is maybe a little time and what's gonna happen with that time? I don't even need to say it so I think that's all I got today. I just wanna come on here and share a little bit about what I've been feeling "
-          },
-          {
-            "text": "um,",
-            "type": "im"
-          },
-          {
-            "text": " and hopefully provide a little comfort and inspiration if any of you have been feeling a certain way'cause "
-          },
-          {
-            "text": "you know,",
-            "type": "im"
-          },
-          {
-            "text": " we're not alone in "
-          },
-          {
-            "text": "our",
-            "type": "rm"
-          },
-          {
-            "text": " "
-          },
-          {
-            "text": "our",
-            "type": "r"
-          },
-          {
-            "text": " feelings. I think that us as humans, we don't really have a ton of unique feelings "
-          },
-          {
-            "text": "um,",
-            "type": "im"
-          },
-          {
-            "text": " in the way that, the way I feel right now the chances are 100% that somebody has felt all of these things "
-          },
-          {
-            "text": "right",
-            "type": "im"
-          },
-          {
-            "text": "? "
-          },
-          {
-            "text": "and,",
-            "type": "rm"
-          },
-          {
-            "text": " "
-          },
-          {
-            "text": "and",
-            "type": "r"
-          },
-          {
-            "text": " so I think it's important that I get the message across that you're not alone. I'm not perfect. I don't have it all figured out. I am not always content with how things are going and "
-          },
-          {
-            "text": "so yeah,",
-            "type": "im"
-          },
-          {
-            "text": " it is what it is. I'm working on it and "
-          },
-          {
-            "text": "you know,",
-            "type": "im"
-          },
-          {
-            "text": " if you're not ready to work on it either, that's OK one day at a time, right? or 10 minutes at a time."
-          }
-        ],
-        "referenceTranscript": "and that's been the message is I gotta try. everyday is a new day. if one day you try and you don't feel like it was good enough, , you can go to bed and you'll try again the next day. there was a quote that I read, a little while back and it said, all you gotta focus on is the next 24 hours. and if it's not this 24 hours, just focus on the next hour. if it's not the next hour, just the next 10 minutes. and trying to think back to that, , that message, when I remember about it saves me, ? I have a lot that I feel like I'm kind of stressed about in the next month, 2, 3, whatever. but it's fine. it's alright'cause what I'm doing right now is this. I'm chilling. I think we gotta try. even if you feel like it's too late, it's not, just remember , it's not too late. I said this in my do it for yourself video, but, whatever it is that you're being called to do, if you wanna pick up your paintbrush, put pen to paper grab your camera, hit record just do it , the only thing you got to lose is maybe a little time and what's gonna happen with that time? I don't even need to say it so I think that's all I got today. I just wanna come on here and share a little bit about what I've been feeling and hopefully provide a little comfort and inspiration if any of you have been feeling a certain way'cause we're not alone in our feelings. I think that us as humans, we don't really have a ton of unique feelings in the way that, the way I feel right now the chances are 100% that somebody has felt all of these things ? and so I think it's important that I get the message across that you're not alone. I'm not perfect. I don't have it all figured out. I am not always content with how things are going and it is what it is. I'm working on it and if you're not ready to work on it either, that's OK one day at a time, right? or 10 minutes at a time.",
-        "modelTranscript": "that's been the message is I gotta try. everyday is a new day. if one day you try and you don't feel like it was good enough, you can go to bed and you'll try again the next day. there was a quote that I read a little while back and it said, all you gotta focus on is the next 24 hours. and if it's not this 24 hours, just focus on the next hour. if it's not the next hour, just the next 10 minutes. and trying to think back to that advice, that message, when I remember about it, it saves me. I think we gotta try. even if you feel like it's too late, it's not. just remember it's not too late. whatever it is that you're being called to do, if you wanna pick up your paintbrush, put pen to paper grab your camera, hit record just do it. the only thing you got to lose is a little time. I just wanna share a little bit about what I've been feeling and hopefully provide a little comfort and inspiration because we're not alone in our feelings. you're not alone. I'm not perfect. I don't have it all figured out. I am not always content with how things are going. I'm working on it and if you're not ready to work on it either, that's OK one day at a time, or 10 minutes at a time.",
-        "metrics": {}
-      },
-      {
-        "id": "lifestyle-d",
-        "title": "Meal-preparation vlog",
-        "scenario": "Lifestyle Vlog",
-        "model": "Gemini 3.0 Pro",
-        "privacyReviewed": true,
-        "privacyNote": "Complete transcript reviewed for public display.",
-        "focus": "IM · RM→R · D",
-        "originalSegments": [
-          {
-            "text": "alright, like",
-            "type": "im"
-          },
-          {
-            "text": " these peppers, I think they're still good. "
-          },
-          {
-            "text": "they don't look like there's any mold.",
-            "type": "rm"
-          },
-          {
-            "text": " "
-          },
-          {
-            "text": "yeah, I don't think there's any mold on them,",
-            "type": "r"
-          },
-          {
-            "text": " "
-          },
-          {
-            "text": "but whatever. um,",
-            "type": "im"
-          },
-          {
-            "text": " I got my cuciniti order in. I've been doing cuciniti now for three weeks. and, "
-          },
-          {
-            "text": "you know,",
-            "type": "im"
-          },
-          {
-            "text": " I really wish, "
-          },
-          {
-            "text": "you know,",
-            "type": "im"
-          },
-          {
-            "text": " "
-          },
-          {
-            "text": "these brands would work with me. I actually just need to reach out to them.",
-            "type": "d"
-          },
-          {
-            "text": " but I have found it very hard to cook food when I get home so late after being away for the weekend. so for those weekends in particular, I like to order food that is actually good and that, "
-          },
-          {
-            "text": "um, and",
-            "type": "im"
-          },
-          {
-            "text": " already made the Hello Fresh stuff does not save me time. "
-          },
-          {
-            "text": "it actually,",
-            "type": "im"
-          },
-          {
-            "text": " I actually take more time doing Hello Fresh than I do like this. "
-          },
-          {
-            "text": "um,",
-            "type": "im"
-          },
-          {
-            "text": " and I have these for lunch. it, this is a polano stew, chicken thigh and some Mexican rice. I do like cooking my own food because I have a particular taste and things I like to combine. but when it comes to crunch time weeks like this, I really need it. so I'm all about it. "
-          },
-          {
-            "text": "yeah, like",
-            "type": "im"
-          },
-          {
-            "text": " another one is this vegetable tofu, "
-          },
-          {
-            "text": "you know,",
-            "type": "im"
-          },
-          {
-            "text": " "
-          },
-          {
-            "text": "like that looks, oh,",
-            "type": "im"
-          },
-          {
-            "text": " that looks pretty good. and it tells you "
           },
           {
             "text": "like",
             "type": "im"
           },
           {
-            "text": " the macros up here. if you're counting macros, the chef it came from. it's just really awesome. I love it anyway."
+            "text": " my mom telling me ",
+            "type": "d"
+          },
+          {
+            "text": "like, oh, yeah,",
+            "type": "im"
+          },
+          {
+            "text": " you were just a very quiet kid. ",
+            "type": "d"
+          },
+          {
+            "text": "like",
+            "type": "im"
+          },
+          {
+            "text": " you didn't really cry too often or anything like that either. ",
+            "type": "d"
+          },
+          {
+            "text": "I mean,",
+            "type": "im"
+          },
+          {
+            "text": " people have had to, ",
+            "type": "d"
+          },
+          {
+            "text": "you know,",
+            "type": "im"
+          },
+          {
+            "text": " my whole life tried to get me to open up a little bit. but as I've gotten into my older 20s, ",
+            "type": "d"
+          },
+          {
+            "text": "um,",
+            "type": "im"
+          },
+          {
+            "text": " I've, I'm a lot better now than I was before. ",
+            "type": "d"
+          },
+          {
+            "text": "um,",
+            "type": "im"
+          },
+          {
+            "text": " but now I'm a little more reserved for selective reasons and intentionally, ",
+            "type": "d"
+          },
+          {
+            "text": "um,",
+            "type": "im"
+          },
+          {
+            "text": " it's more ",
+            "type": "d"
+          },
+          {
+            "text": "the,",
+            "type": "rm"
+          },
+          {
+            "text": " ",
+            "type": "d"
+          },
+          {
+            "text": "the",
+            "type": "r"
+          },
+          {
+            "text": " articulation and ",
+            "type": "d"
+          },
+          {
+            "text": "the,",
+            "type": "rm"
+          },
+          {
+            "text": " ",
+            "type": "d"
+          },
+          {
+            "text": "the",
+            "type": "r"
+          },
+          {
+            "text": " choice to stay that way is more, ",
+            "type": "d"
+          },
+          {
+            "text": "you know,",
+            "type": "im"
+          },
+          {
+            "text": " ",
+            "type": "d"
+          },
+          {
+            "text": "my",
+            "type": "rm"
+          },
+          {
+            "text": " ",
+            "type": "d"
+          },
+          {
+            "text": "my",
+            "type": "r"
+          },
+          {
+            "text": " mindset. ",
+            "type": "d"
+          },
+          {
+            "text": "um, I forgot where I was going with that but yeah,",
+            "type": "im"
+          },
+          {
+            "text": " the point is I felt called to be here and to speak to the camera and it's a little bit different "
+          },
+          {
+            "text": "than",
+            "type": "rm"
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "than",
+            "type": "r"
+          },
+          {
+            "text": " usual because "
+          },
+          {
+            "text": "I,",
+            "type": "rm"
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "I",
+            "type": "r"
+          },
+          {
+            "text": " didn't really set anything up besides this camera. "
+          },
+          {
+            "text": "I turned on this light this light in the corner here is always on in the evening so nothing crazy microphone. ",
+            "type": "d"
+          },
+          {
+            "text": "um,",
+            "type": "im"
+          },
+          {
+            "text": "  then my usual setups were actually set up a light and what not. ",
+            "type": "d"
+          },
+          {
+            "text": "um, so yeah, what else? yeah.",
+            "type": "im"
           }
         ],
-        "referenceTranscript": "these peppers, I think they're still good. yeah, I don't think there's any mold on them, I got my cuciniti order in. I've been doing cuciniti now for three weeks. and, I really wish, but I have found it very hard to cook food when I get home so late after being away for the weekend. so for those weekends in particular, I like to order food that is actually good and that, already made the Hello Fresh stuff does not save me time. I actually take more time doing Hello Fresh than I do like this. and I have these for lunch. it, this is a polano stew, chicken thigh and some Mexican rice. I do like cooking my own food because I have a particular taste and things I like to combine. but when it comes to crunch time weeks like this, I really need it. so I'm all about it. another one is this vegetable tofu, that looks pretty good. and it tells you the macros up here. if you're counting macros, the chef it came from. it's just really awesome. I love it anyway.",
-        "modelTranscript": "I got my cuciniti order in. I've been doing cuciniti now for three weeks. I have found it very hard to cook food when I get home so late after being away for the weekend. I like to order food that is good and already made. The Hello Fresh stuff does not save me time. I actually take more time doing Hello Fresh than I do like this. And I have these for lunch. This is a polano stew, chicken thigh and some Mexican rice. I do like cooking my own food because I have a particular taste and things I like to combine. But when it comes to crunch time weeks like this, I really need it. So I'm all about it. Another one is this vegetable tofu, that looks pretty good. And it tells you the macros up here. If you're counting macros, the chef it came from. It's just really awesome. I love it.",
-        "metrics": {}
+        "referenceTranscript": ", man, this life is, life is hard, dude. it's really hard. often times I think we're occupying our time in ways that maybe is not what we wanna be doing. I'm trying to get back to a place where things feel more in line with who I am and what I enjoy, what brings me happiness and fulfillment and stuff like this does, right before I started recording this, I felt like this massive urgency to just release something out of my body. and I don't speak often. if you know who I am in person, you know that , I'm pretty reserved. as much as I wanna be more personable and, communicative. I'm pretty quiet. the point is I felt called to be here and to speak to the camera and it's a little bit different than usual because I didn't really set anything up besides this camera.",
+        "modelEdits": [
+          {
+            "type": "im",
+            "text": "uh, man,",
+            "kept": ""
+          },
+          {
+            "type": "rm",
+            "text": "this life is, uh,",
+            "kept": ""
+          },
+          {
+            "type": "im",
+            "text": "dude.",
+            "kept": ""
+          },
+          {
+            "type": "rm",
+            "text": "it's really hard.",
+            "kept": ""
+          },
+          {
+            "type": "rm",
+            "text": "I,",
+            "kept": "I"
+          },
+          {
+            "type": "im",
+            "text": "you know,",
+            "kept": ""
+          },
+          {
+            "type": "im",
+            "text": "you know,",
+            "kept": ""
+          },
+          {
+            "type": "rm",
+            "text": "I,",
+            "kept": "I"
+          },
+          {
+            "type": "rm",
+            "text": "I,",
+            "kept": "I"
+          },
+          {
+            "type": "rm",
+            "text": "and I don't,",
+            "kept": ""
+          },
+          {
+            "type": "rm",
+            "text": "I'm very, uh, I'm,",
+            "kept": "I'm pretty"
+          },
+          {
+            "type": "rm",
+            "text": "I,",
+            "kept": "I"
+          },
+          {
+            "type": "im",
+            "text": "kind of, you know,",
+            "kept": ""
+          },
+          {
+            "type": "im",
+            "text": "uh,",
+            "kept": ""
+          },
+          {
+            "type": "rm",
+            "text": "I'm,",
+            "kept": "I'm"
+          },
+          {
+            "type": "rm",
+            "text": "and that's,",
+            "kept": ""
+          },
+          {
+            "type": "d",
+            "text": "since probably the moment I was born. I can remember like my mom telling me like, oh, yeah, you were just a very quiet kid. like you didn't really cry too often or anything like that either. I mean, people have had to, you know, my whole life tried to get me to open up a little bit.",
+            "kept": ""
+          },
+          {
+            "type": "im",
+            "text": "um,",
+            "kept": ""
+          },
+          {
+            "type": "c",
+            "text": "I've,",
+            "kept": "I'm"
+          },
+          {
+            "type": "im",
+            "text": "um,",
+            "kept": ""
+          },
+          {
+            "type": "d",
+            "text": "um, it's more the, the articulation and the, the choice to stay that way is more, you know, my my mindset.",
+            "kept": ""
+          },
+          {
+            "type": "d",
+            "text": "um, I forgot where I was going with that but yeah, the point is",
+            "kept": ""
+          },
+          {
+            "type": "c",
+            "text": "than than",
+            "kept": "than"
+          },
+          {
+            "type": "rm",
+            "text": "I,",
+            "kept": "I"
+          },
+          {
+            "type": "d",
+            "text": "I turned on this light this light in the corner here is always on in the evening so nothing crazy microphone. um, then my usual setups were actually set up a light and what not. um, so yeah, what else? yeah.",
+            "kept": ""
+          }
+        ],
+        "modelTranscript": "life is hard. often times I think we're occupying our time in ways that maybe is not what we wanna be doing. I'm trying to get back to a place where things feel more in line with who I am and what I enjoy, what brings me happiness and fulfillment and stuff like this does. right before I started recording this, I felt like this massive urgency to just release something out of my body. and I don't speak often. if you know who I am in person, you know that I'm pretty reserved. as much as I wanna be more personable and communicative. I'm pretty quiet. and that's who I've always been my entire life. but as I've gotten into my older 20s, I'm a lot better now than I was before. but now I'm a little more reserved for selective reasons and intentionally. I felt called to be here and to speak to the camera and it's a little bit different than usual because I didn't really set anything up besides this camera.",
+        "metrics": {
+          "IM F1": 0.824,
+          "RM→R Succ.": 0.889,
+          "D F1": 0.853
+        }
+      },
+      {
+        "id": "lifestyle-d",
+        "title": "Food review",
+        "scenario": "Lifestyle/Food",
+        "model": "Gemini 3.0 Pro",
+        "privacyReviewed": true,
+        "privacyNote": "Complete transcript reviewed for public display.",
+        "focus": "IM · RM→R · D",
+        "originalSegments": [
+          {
+            "text": "yes.",
+            "type": "im"
+          },
+          {
+            "text": " hi, guys. ",
+            "type": "d"
+          },
+          {
+            "text": "well, yes, well,",
+            "type": "im"
+          },
+          {
+            "text": " I've had a couple of suggestions that the Bacon Deluxe might be worth checking out. so that's exactly, ",
+            "type": "d"
+          },
+          {
+            "text": "that's",
+            "type": "im"
+          },
+          {
+            "text": " the chicken crunch. OK. ",
+            "type": "d"
+          },
+          {
+            "text": "a new item on the Hungry Jack's menu is,",
+            "type": "rm"
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "a new item on the Hungry Jack's menu is the Bacon Chicken Crunch.",
+            "type": "r"
+          },
+          {
+            "text": " and, "
+          },
+          {
+            "text": "uh,",
+            "type": "im"
+          },
+          {
+            "text": " obviously it's got bacon and chicken in it and the crunch comes courtesy of corn flakes. so there you go. opening it up straight away, you can see that there's something crunchy happening "
+          },
+          {
+            "text": "on the outside of this burger,",
+            "type": "d"
+          },
+          {
+            "text": " on the outside of the fillet. "
+          },
+          {
+            "text": "uh,",
+            "type": "im"
+          },
+          {
+            "text": " so probably a slightly smaller burger than the Whopper. ",
+            "type": "d"
+          },
+          {
+            "text": "so we're,",
+            "type": "rm"
+          },
+          {
+            "text": " ",
+            "type": "d"
+          },
+          {
+            "text": "we're",
+            "type": "r"
+          },
+          {
+            "text": " not in the Whopper line here. and, ",
+            "type": "d"
+          },
+          {
+            "text": "uh,",
+            "type": "im"
+          },
+          {
+            "text": " we have lettuce, mayonnaise and bacon, the chicken crunch and some sauce on the bottom. so it's looking like it's going to be crunchy. "
+          },
+          {
+            "text": "uh,",
+            "type": "im"
+          },
+          {
+            "text": " but is that actually the case? well, let's find out. hmm. "
+          },
+          {
+            "text": "um,",
+            "type": "im"
+          },
+          {
+            "text": " we have some spicy sauce in there, but it's not too spicy. definitely got a bit of "
+          },
+          {
+            "text": "a",
+            "type": "im"
+          },
+          {
+            "text": ", an edge to it. "
+          },
+          {
+            "text": "uh,",
+            "type": "im"
+          },
+          {
+            "text": " but it's well balanced by the contents in between the buns. what is it about chicken and bacon that make them go so well together? just makes for "
+          },
+          {
+            "text": "one extremely good mouthful",
+            "type": "r"
+          },
+          {
+            "text": ", "
+          },
+          {
+            "text": "one extremely tasty mouthful.",
+            "type": "rm"
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "yeah.",
+            "type": "im"
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "they do work well.",
+            "type": "rm"
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "they do work well together.",
+            "type": "r"
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "hmm.",
+            "type": "im"
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "so taste of this is quite,",
+            "type": "d"
+          },
+          {
+            "text": " the taste of all those components together is really good. I'm enjoying this burger. and once again, we've got real meat. we've got the chicken and the bacon. we got nothing, "
+          },
+          {
+            "text": "uh,",
+            "type": "im"
+          },
+          {
+            "text": " artificial in there. "
+          },
+          {
+            "text": "so that's what I like about burgers that are either Angus, chicken, whatever, when we get the real thing rather than a Patty that's being composed by somebody with all sorts of additives, ",
+            "type": "d"
+          },
+          {
+            "text": "etcetera.",
+            "type": "im"
+          },
+          {
+            "text": " I know there's additives in there, ",
+            "type": "d"
+          },
+          {
+            "text": "uh,",
+            "type": "im"
+          },
+          {
+            "text": " but they're not the kind of things that make you think you're eating meat when you're not actually eating meat. ",
+            "type": "d"
+          },
+          {
+            "text": "um, yeah. OK.",
+            "type": "im"
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "priced at around $5. this is a good meal.",
+            "type": "rm"
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "priced at around $5. this is a good burger.",
+            "type": "r"
+          },
+          {
+            "text": " it's "
+          },
+          {
+            "text": "kind of",
+            "type": "im"
+          },
+          {
+            "text": " strange how well the corn flakes without crunch work with the chicken'cause that is actually quite tasty. "
+          },
+          {
+            "text": "while I continue to consume this crunchy chicken and bacon burger, I wanna show you a little live video that I was sent, ",
+            "type": "d"
+          },
+          {
+            "text": "ah,",
+            "type": "im"
+          },
+          {
+            "text": " on my Facebook page from a couple of guys who really have got right into the whole total yummy experience. check this out. ",
+            "type": "d"
+          },
+          {
+            "text": "so thanks, Brad, for, so, thanks, Brad, for posting that. that is fantastic.",
+            "type": "rm"
+          },
+          {
+            "text": " ",
+            "type": "d"
+          },
+          {
+            "text": "so thanks, Brad, for posting that.",
+            "type": "r"
+          },
+          {
+            "text": " absolutely amazing that you did that, and I really enjoyed watching it. ",
+            "type": "d"
+          },
+          {
+            "text": "send me more. send me more. hmm.",
+            "type": "rm"
+          },
+          {
+            "text": " ",
+            "type": "d"
+          },
+          {
+            "text": "send me more.",
+            "type": "r"
+          },
+          {
+            "text": " wow. I'm nearly getting through this one, too. ",
+            "type": "d"
+          },
+          {
+            "text": "hmm.",
+            "type": "im"
+          },
+          {
+            "text": " you can send me more of those little snippets of what your experience at a fast food place is and post them to my Facebook page. "
+          },
+          {
+            "text": "and then if you're happy, then I can present them on these videos so if you wanna do that my pleasure to represent them here and ",
+            "type": "d"
+          },
+          {
+            "text": "um yeah",
+            "type": "im"
+          },
+          {
+            "text": " it's a great idea so there you go. I'm getting close to being able to rate this little baby ",
+            "type": "d"
+          },
+          {
+            "text": "um,",
+            "type": "im"
+          },
+          {
+            "text": " if I wasn't told that it was corn flakes that were making the crunch I wouldn't know I'd be wondering what it was though I suppose but it is quite tasty. it is ",
+            "type": "d"
+          },
+          {
+            "text": "um yeah and and",
+            "type": "im"
+          },
+          {
+            "text": " ",
+            "type": "d"
+          },
+          {
+            "text": "to put a rating on it I'd have to say that "
+          },
+          {
+            "text": "yeah",
+            "type": "im"
+          },
+          {
+            "text": " this is really good I like it all the combination of flavors work really well together it's not over spiced but it is nicely spiced for the chicken and the bacon and "
+          },
+          {
+            "text": "uh",
+            "type": "im"
+          },
+          {
+            "text": " the crunch is just something that gives it a little bit extra so yeah this is really good I think you'll enjoy it "
+          },
+          {
+            "text": "OK while I continue to finish it off couple of shout outs to Brad Hunter gave us that great video and he just want and he wants to say hey Cooper Eccles you're my best friend from Zach Hines and Boyd Inglis so there you go guys ",
+            "type": "d"
+          },
+          {
+            "text": "I hope you're having a good day",
+            "type": "r"
+          },
+          {
+            "text": " and ",
+            "type": "d"
+          },
+          {
+            "text": "um",
+            "type": "im"
+          },
+          {
+            "text": " ",
+            "type": "d"
+          },
+          {
+            "text": "I hope you have it",
+            "type": "rm"
+          },
+          {
+            "text": " and I hope that whatever you're eating tastes as good as this little baby ",
+            "type": "d"
+          },
+          {
+            "text": "OK",
+            "type": "im"
+          },
+          {
+            "text": " and also to Lauren City Transport New South Wales internet vlogs hi Lauren and I'm glad that you like the videos and ",
+            "type": "d"
+          },
+          {
+            "text": "um",
+            "type": "im"
+          },
+          {
+            "text": " I hope you're having a good day and I hope you enjoy watching whatever you watch on the channel and ",
+            "type": "d"
+          },
+          {
+            "text": "um,",
+            "type": "im"
+          },
+          {
+            "text": " thank you for checking me out and ",
+            "type": "d"
+          },
+          {
+            "text": "um,",
+            "type": "im"
+          },
+          {
+            "text": " it's really great to have you on board. OK guys. ",
+            "type": "d"
+          },
+          {
+            "text": "well,",
+            "type": "im"
+          },
+          {
+            "text": " as I finish this. ",
+            "type": "d"
+          },
+          {
+            "text": "hmm. oh,",
+            "type": "im"
+          },
+          {
+            "text": " bombs away. ",
+            "type": "d"
+          },
+          {
+            "text": "yeah. OK. well,",
+            "type": "im"
+          },
+          {
+            "text": " there you go guys. that was one really good experience. I'm glad that you asked me to check out the bacon chicken crunch from Hungry Jack's. "
+          },
+          {
+            "text": "uh,",
+            "type": "im"
+          },
+          {
+            "text": " it was a pleasure on my behalf to do that for you and now with my last mouthful, I'll say goodbye. see you later guys. "
+          },
+          {
+            "text": "hmm. oh,",
+            "type": "im"
+          },
+          {
+            "text": " hi everybody. today I've got a guest appearance from.",
+            "type": "d"
+          }
+        ],
+        "referenceTranscript": "a new item on the Hungry Jack's menu is the Bacon Chicken Crunch. and, obviously it's got bacon and chicken in it and the crunch comes courtesy of corn flakes. so there you go. opening it up straight away, you can see that there's something crunchy happening on the outside of the fillet. we have lettuce, mayonnaise and bacon, the chicken crunch and some sauce on the bottom. so it's looking like it's going to be crunchy. but is that actually the case? well, let's find out. hmm. we have some spicy sauce in there, but it's not too spicy. definitely got a bit of , an edge to it. but it's well balanced by the contents in between the buns. what is it about chicken and bacon that make them go so well together? just makes for one extremely good mouthful, they do work well together. the taste of all those components together is really good. I'm enjoying this burger. and once again, we've got real meat. we've got the chicken and the bacon. we got nothing, artificial in there. priced at around $5. this is a good burger. it's strange how well the corn flakes without crunch work with the chicken'cause that is actually quite tasty. you can send me more of those little snippets of what your experience at a fast food place is and post them to my Facebook page. to put a rating on it I'd have to say that this is really good I like it all the combination of flavors work really well together it's not over spiced but it is nicely spiced for the chicken and the bacon and the crunch is just something that gives it a little bit extra so yeah this is really good I think you'll enjoy it there you go guys. that was one really good experience. I'm glad that you asked me to check out the bacon chicken crunch from Hungry Jack's. it was a pleasure on my behalf to do that for you and now with my last mouthful, I'll say goodbye. see you later guys.",
+        "modelEdits": [
+          {
+            "type": "im",
+            "text": "yes. ",
+            "kept": ""
+          },
+          {
+            "type": "im",
+            "text": "well, yes, well, ",
+            "kept": ""
+          },
+          {
+            "type": "d",
+            "text": "I've had a couple of suggestions that the Bacon Deluxe might be worth checking out. so that's exactly, that's the chicken crunch. OK. ",
+            "kept": ""
+          },
+          {
+            "type": "c",
+            "text": "a new item on the Hungry Jack's menu is, ",
+            "kept": "a new item on the Hungry Jack's menu is the Bacon Chicken Crunch."
+          },
+          {
+            "type": "im",
+            "text": "and, uh, obviously ",
+            "kept": ""
+          },
+          {
+            "type": "im",
+            "text": "so there you go. ",
+            "kept": ""
+          },
+          {
+            "type": "im",
+            "text": "uh, so ",
+            "kept": ""
+          },
+          {
+            "type": "im",
+            "text": "so ",
+            "kept": ""
+          },
+          {
+            "type": "c",
+            "text": "we're, ",
+            "kept": "we're"
+          },
+          {
+            "type": "im",
+            "text": "and, uh, ",
+            "kept": ""
+          },
+          {
+            "type": "im",
+            "text": "so ",
+            "kept": ""
+          },
+          {
+            "type": "c",
+            "text": "uh, but is that actually the case? ",
+            "kept": "but is that the case?"
+          },
+          {
+            "type": "im",
+            "text": "well, ",
+            "kept": ""
+          },
+          {
+            "type": "im",
+            "text": "hmm. um, ",
+            "kept": ""
+          },
+          {
+            "type": "im",
+            "text": "a bit of a, ",
+            "kept": ""
+          },
+          {
+            "type": "c",
+            "text": "uh, but ",
+            "kept": "but "
+          },
+          {
+            "type": "c",
+            "text": "one extremely good mouthful, ",
+            "kept": "one extremely tasty mouthful."
+          },
+          {
+            "type": "im",
+            "text": "yeah. ",
+            "kept": ""
+          },
+          {
+            "type": "c",
+            "text": "they do work well. ",
+            "kept": "they do work well together."
+          },
+          {
+            "type": "im",
+            "text": " hmm.",
+            "kept": ""
+          },
+          {
+            "type": "c",
+            "text": "so taste of this is quite, ",
+            "kept": "the taste of all those components together is really good."
+          },
+          {
+            "type": "im",
+            "text": ", uh, ",
+            "kept": ""
+          },
+          {
+            "type": "im",
+            "text": "so ",
+            "kept": ""
+          },
+          {
+            "type": "im",
+            "text": ", whatever",
+            "kept": ""
+          },
+          {
+            "type": "im",
+            "text": ", etcetera",
+            "kept": ""
+          },
+          {
+            "type": "im",
+            "text": ", uh, ",
+            "kept": ""
+          },
+          {
+            "type": "im",
+            "text": "um, yeah. OK. ",
+            "kept": ""
+          },
+          {
+            "type": "c",
+            "text": "priced at around $5. this is a good meal. ",
+            "kept": "priced at around $5. this is a good burger."
+          },
+          {
+            "type": "im",
+            "text": "kind of ",
+            "kept": ""
+          },
+          {
+            "type": "rm",
+            "text": "without crunch ",
+            "kept": ""
+          },
+          {
+            "type": "c",
+            "text": "'cause that is actually ",
+            "kept": "'cause that is "
+          },
+          {
+            "type": "d",
+            "text": "while I continue to consume this crunchy chicken and bacon burger, I wanna show you a little live video that I was sent, ah, on my Facebook page from a couple of guys who really have got right into the whole total yummy experience. check this out. so thanks, Brad, for, so, thanks, Brad, for posting that. that is fantastic. so thanks, Brad, for posting that. absolutely amazing that you did that, and I really enjoyed watching it. send me more. send me more. hmm. send me more. wow. I'm nearly getting through this one, too. hmm. you can send me more of those little snippets of what your experience at a fast food place is and post them to my Facebook page. and then if you're happy, then I can present them on these videos so if you wanna do that my pleasure to represent them here and um yeah it's a great idea so there you go. ",
+            "kept": ""
+          },
+          {
+            "type": "im",
+            "text": " um, ",
+            "kept": ""
+          },
+          {
+            "type": "im",
+            "text": " though I suppose",
+            "kept": ""
+          },
+          {
+            "type": "im",
+            "text": "it is um yeah and and ",
+            "kept": ""
+          },
+          {
+            "type": "im",
+            "text": " yeah ",
+            "kept": ""
+          },
+          {
+            "type": "rm",
+            "text": " all ",
+            "kept": ""
+          },
+          {
+            "type": "c",
+            "text": " and uh ",
+            "kept": " and "
+          },
+          {
+            "type": "im",
+            "text": "so yeah ",
+            "kept": ""
+          },
+          {
+            "type": "d",
+            "text": "OK while I continue to finish it off couple of shout outs to Brad Hunter gave us that great video and he just want and he wants to say hey Cooper Eccles you're my best friend from Zach Hines and Boyd Inglis so there you go guys I hope you're having a good day and um I hope you have it and I hope that whatever you're eating tastes as good as this little baby OK and also to Lauren City Transport New South Wales internet vlogs hi Lauren and I'm glad that you like the videos and um I hope you're having a good day and I hope you enjoy watching whatever you watch on the channel and um, thank you for checking me out and um, it's really great to have you on board. ",
+            "kept": ""
+          },
+          {
+            "type": "d",
+            "text": "OK guys. well, as I finish this. hmm. oh, bombs away. yeah. OK. well, there you go guys. ",
+            "kept": ""
+          },
+          {
+            "type": "im",
+            "text": "uh, ",
+            "kept": ""
+          },
+          {
+            "type": "im",
+            "text": " hmm.",
+            "kept": ""
+          },
+          {
+            "type": "d",
+            "text": " oh, hi everybody. today I've got a guest appearance from.",
+            "kept": ""
+          }
+        ],
+        "modelTranscript": "hi, guys. a new item on the Hungry Jack's menu is the Bacon Chicken Crunch. it's got bacon and chicken in it and the crunch comes courtesy of corn flakes. opening it up straight away, you can see that there's something crunchy happening on the outside of this burger, on the outside of the fillet. probably a slightly smaller burger than the Whopper. we're not in the Whopper line here. we have lettuce, mayonnaise and bacon, the chicken crunch and some sauce on the bottom. it's looking like it's going to be crunchy. but is that the case? let's find out. we have some spicy sauce in there, but it's not too spicy. definitely got an edge to it. but it's well balanced by the contents in between the buns. what is it about chicken and bacon that make them go so well together? just makes for one extremely tasty mouthful. they do work well together. the taste of all those components together is really good. I'm enjoying this burger. and once again, we've got real meat. we've got the chicken and the bacon. we got nothing artificial in there. that's what I like about burgers that are either Angus, chicken, when we get the real thing rather than a Patty that's being composed by somebody with all sorts of additives. I know there's additives in there, but they're not the kind of things that make you think you're eating meat when you're not actually eating meat. priced at around $5. this is a good burger. it's strange how well the corn flakes work with the chicken 'cause that is quite tasty. I'm getting close to being able to rate this little baby if I wasn't told that it was corn flakes that were making the crunch I wouldn't know I'd be wondering what it was but it is quite tasty. to put a rating on it I'd have to say that this is really good I like it the combination of flavors work really well together it's not over spiced but it is nicely spiced for the chicken and the bacon and the crunch is just something that gives it a little bit extra this is really good I think you'll enjoy it that was one really good experience. I'm glad that you asked me to check out the bacon chicken crunch from Hungry Jack's. it was a pleasure on my behalf to do that for you and now with my last mouthful, I'll say goodbye. see you later guys.",
+        "metrics": {
+          "IM F1": 0.585,
+          "RM→R Succ.": 1.0,
+          "D F1": 0.84
+        }
       }
     ]
   }

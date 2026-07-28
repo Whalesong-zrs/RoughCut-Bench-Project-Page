@@ -10,25 +10,29 @@ from pathlib import Path
 CASE_METADATA = [
     {
         "id": "beauty-im",
-        "source": "case4_8",
-        "title": "Beauty tutorial",
+        "source": "case4_5",
+        "title": "Concealer tutorial",
         "scenario": "Beauty/Fashion",
+        "metrics": {"IM F1": 1.000, "RM→R Succ.": 1.000, "D F1": 0.996},
     },
     {
         "id": "qa-rm",
-        "source": "case3_5",
+        "source": "case3_4",
         "title": "Reflective monologue",
         "scenario": "Podcast/Q&A",
+        "metrics": {"IM F1": 0.824, "RM→R Succ.": 0.889, "D F1": 0.853},
     },
     {
         "id": "lifestyle-d",
-        "source": "case15_1",
-        "title": "Meal-preparation vlog",
-        "scenario": "Lifestyle Vlog",
+        "source": "case6_2",
+        "title": "Food review",
+        "scenario": "Lifestyle/Food",
+        "metrics": {"IM F1": 0.585, "RM→R Succ.": 1.000, "D F1": 0.840},
     },
 ]
 
 TAG_PATTERN = re.compile(r"\[(IM|RM|C|D)\]")
+RM_PAIR_PATTERN = re.compile(r"\[RM\](.*?)\[RM\]\s*\[C\](.*?)\[C\]", re.DOTALL)
 TYPE_PRIORITY = (("RM", "rm"), ("C", "r"), ("IM", "im"), ("D", "d"))
 
 
@@ -86,6 +90,19 @@ def build_reference(text):
     return re.sub(r"\s+", " ", "".join(kept)).strip()
 
 
+def normalize_match_text(text):
+    return re.sub(r"\s+", " ", text).strip().lower()
+
+
+def extract_rm_pairs(text):
+    pairs = {}
+    for match in RM_PAIR_PATTERN.finditer(text):
+        removed = re.sub(TAG_PATTERN, "", match.group(1))
+        retained = re.sub(TAG_PATTERN, "", match.group(2))
+        pairs[normalize_match_text(removed)] = re.sub(r"\s+", " ", retained).strip()
+    return pairs
+
+
 def build_case(source_root, metadata):
     case_root = source_root / metadata["source"]
     gt_text = (case_root / "gt.txt").read_text(encoding="utf-8").strip()
@@ -94,6 +111,20 @@ def build_case(source_root, metadata):
             encoding="utf-8"
         )
     )
+    rm_pairs = extract_rm_pairs(gt_text)
+    model_edits = []
+    for edit in prediction.get("edits", []):
+        edit_type = edit.get("type", "").lower()
+        kept = edit.get("kept", "")
+        if edit_type == "rm" and not kept:
+            kept = rm_pairs.get(normalize_match_text(edit.get("text", "")), "")
+        model_edits.append(
+            {
+                "type": edit_type,
+                "text": edit.get("text", ""),
+                "kept": kept,
+            }
+        )
 
     case = {
         "id": metadata["id"],
@@ -105,8 +136,9 @@ def build_case(source_root, metadata):
         "focus": "IM · RM→R · D",
         "originalSegments": parse_annotated_transcript(gt_text),
         "referenceTranscript": build_reference(gt_text),
+        "modelEdits": model_edits,
         "modelTranscript": prediction["cleaned_text"],
-        "metrics": {},
+        "metrics": metadata["metrics"],
     }
     return case
 
@@ -130,7 +162,7 @@ def main():
             "id": "speech-cleanup-cases",
             "label": "Speech Cleanup",
             "summary": (
-                "Complete transcript-cleanup cases covering the annotated operations."
+                "High-alignment transcript-cleanup cases with complete inputs and outputs."
             ),
             "cases": [build_case(args.source_root, metadata) for metadata in CASE_METADATA],
         }
