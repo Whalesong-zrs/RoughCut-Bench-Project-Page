@@ -2,27 +2,119 @@
   "category": {
     "id": "speech-cleanup-cases",
     "label": "Speech Cleanup",
-    "summary": "Representative transcript-cleanup excerpts covering the annotated operations.",
+    "summary": "Complete transcript-cleanup cases covering the annotated operations.",
     "cases": [
       {
         "id": "beauty-im",
-        "title": "Beauty tutorial opening",
+        "title": "Beauty tutorial",
         "scenario": "Beauty/Fashion",
         "model": "Gemini 3.0 Pro",
         "privacyReviewed": true,
-        "privacyNote": "Short transcript excerpt reviewed for public display.",
+        "privacyNote": "Complete transcript reviewed for public display.",
         "focus": "IM · RM→R · D",
         "originalSegments": [
-          {"text": "So, ah, yeah, let me just take a sip of coffee. Hmm.", "type": "d"},
-          {"text": "Let's get right on into it."},
-          {"text": "OK.", "type": "im"},
-          {"text": "The first thing I'm going to do,"},
-          {"text": "I'm,", "type": "rm"},
-          {"text": "I'm", "type": "r"},
-          {"text": "going to do my face first."}
+          {
+            "text": "so, ah, yeah, let me just take a sip of coffee. hmm. and",
+            "type": "im"
+          },
+          {
+            "text": " let's get right on into it. "
+          },
+          {
+            "text": "OK.",
+            "type": "im"
+          },
+          {
+            "text": " so the first thing I'm going to do, "
+          },
+          {
+            "text": "I'm,",
+            "type": "rm"
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "I'm",
+            "type": "r"
+          },
+          {
+            "text": " going to do my face first. "
+          },
+          {
+            "text": "I'm not going to do ",
+            "type": "d"
+          },
+          {
+            "text": "like",
+            "type": "im"
+          },
+          {
+            "text": " a super intense eye look. ",
+            "type": "d"
+          },
+          {
+            "text": "I mean,",
+            "type": "im"
+          },
+          {
+            "text": " I wanna do a good look. we're gonna do the whole eyeshadow, lashes and everything, but I'm gonna try and keep it somewhat simple so I shouldn't need to worry about fallout or anything like that. so I am going to start with my face. ",
+            "type": "d"
+          },
+          {
+            "text": "and so",
+            "type": "im"
+          },
+          {
+            "text": " I'm using the Maybelline Master Prime Blur and Illuminating primer. and I take about this much and rub that all in. I really love this primer. "
+          },
+          {
+            "text": "my favorite has been the Becca backlight priming filter, but I ran out of that one. ",
+            "type": "d"
+          },
+          {
+            "text": "um,",
+            "type": "im"
+          },
+          {
+            "text": " I'm probably gonna pick up another Becca backlight priming filter during the Ulta 21 Days of beauty. it's going on sale sometime this week, I think. ",
+            "type": "d"
+          },
+          {
+            "text": "um,",
+            "type": "im"
+          },
+          {
+            "text": " that's another video if you're new to my channel and you get bored during this. hopefully this isn't boring, ",
+            "type": "d"
+          },
+          {
+            "text": "but I don't know.",
+            "type": "im"
+          },
+          {
+            "text": " I'm just ",
+            "type": "d"
+          },
+          {
+            "text": "like",
+            "type": "im"
+          },
+          {
+            "text": " worried that it's gonna be boring. ",
+            "type": "d"
+          },
+          {
+            "text": "um,",
+            "type": "im"
+          },
+          {
+            "text": " I made an Ulta 21 Days of Beauty Sale guide video so you could check that out too. OK.",
+            "type": "d"
+          }
         ],
-        "referenceTranscript": "Let's get right on into it. So the first thing I'm going to do, I'm going to do my face first.",
-        "modelTranscript": "Let's get right on into it. The first thing I'm going to do, I'm going to do my face first.",
+        "referenceTranscript": "let's get right on into it. so the first thing I'm going to do, I'm going to do my face first. I'm using the Maybelline Master Prime Blur and Illuminating primer. and I take about this much and rub that all in. I really love this primer.",
+        "modelTranscript": "let's get right on into it. The first thing I'm going to do, I'm going to do my face first. I'm not going to do a super intense eye look. I wanna do a good look. we're gonna do the whole eyeshadow, lashes and everything, but I'm gonna try and keep it somewhat simple so I shouldn't need to worry about fallout. I am going to start with my face. I'm using the Maybelline Master Prime Blur and Illuminating primer. and I take about this much and rub that all in. I really love this primer. my favorite has been the Becca backlight priming filter, but I ran out of that one. I'm probably gonna pick up another Becca backlight priming filter during the Ulta 21 Days of beauty. it's going on sale sometime this week.",
         "metrics": {}
       },
       {
@@ -31,21 +123,298 @@
         "scenario": "Podcast/Q&A",
         "model": "Gemini 3.0 Pro",
         "privacyReviewed": true,
-        "privacyNote": "Short transcript excerpt reviewed for public display.",
+        "privacyNote": "Complete transcript reviewed for public display.",
         "focus": "IM · RM→R · D",
         "originalSegments": [
-          {"text": "And"},
-          {"text": "that's, that's been the,", "type": "rm"},
-          {"text": "that's been the", "type": "r"},
-          {"text": "the", "type": "rm"},
-          {"text": "message is I gotta try."},
-          {"text": "You know,", "type": "im"},
-          {"text": "every day is a new day."},
-          {"text": "I'm just chatting, having a good time with you, drinking my espresso tonic. I'm gonna play some video games after this.", "type": "d"},
-          {"text": "I think we gotta try."}
+          {
+            "text": "and "
+          },
+          {
+            "text": "that's, that's been the,",
+            "type": "rm"
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "that's been the",
+            "type": "r"
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "the",
+            "type": "rm"
+          },
+          {
+            "text": " message is I gotta try. "
+          },
+          {
+            "text": "you know,",
+            "type": "im"
+          },
+          {
+            "text": " everyday is a new day. if one day you try and you don't feel like it was good enough, "
+          },
+          {
+            "text": "well",
+            "type": "im"
+          },
+          {
+            "text": ", you can go to bed and you'll try again the next day. there was a quote that I read, "
+          },
+          {
+            "text": "uh,",
+            "type": "im"
+          },
+          {
+            "text": " a little while back and it said, all you gotta focus on is the next 24 hours. and if it's not this 24 hours, just focus on the next hour. if it's not the next hour, just the next 10 minutes. and trying to think back to that, "
+          },
+          {
+            "text": "that advice",
+            "type": "rm"
+          },
+          {
+            "text": ", "
+          },
+          {
+            "text": "that message",
+            "type": "r"
+          },
+          {
+            "text": ", when I remember about "
+          },
+          {
+            "text": "it, it,",
+            "type": "rm"
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "it",
+            "type": "r"
+          },
+          {
+            "text": " saves me, "
+          },
+          {
+            "text": "right",
+            "type": "im"
+          },
+          {
+            "text": "? "
+          },
+          {
+            "text": "you know,",
+            "type": "im"
+          },
+          {
+            "text": " I have a lot that "
+          },
+          {
+            "text": "I'm,",
+            "type": "im"
+          },
+          {
+            "text": " I feel like I'm kind of stressed about in the next month, 2, 3, whatever. but "
+          },
+          {
+            "text": "it's,",
+            "type": "rm"
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "it's",
+            "type": "r"
+          },
+          {
+            "text": " fine. "
+          },
+          {
+            "text": "you know,",
+            "type": "im"
+          },
+          {
+            "text": " it's alright'cause what I'm doing right now is this. I'm chilling. "
+          },
+          {
+            "text": "I'm just,",
+            "type": "rm"
+          },
+          {
+            "text": " ",
+            "type": "d"
+          },
+          {
+            "text": "I'm just",
+            "type": "r"
+          },
+          {
+            "text": " chatting, having a good time with you. ",
+            "type": "d"
+          },
+          {
+            "text": "um,",
+            "type": "im"
+          },
+          {
+            "text": " drinking my espresso tonic. I'm gonna play some video games after this. so that's gonna be fun. ",
+            "type": "d"
+          },
+          {
+            "text": "um, yeah,",
+            "type": "im"
+          },
+          {
+            "text": " I think we gotta try. even if you feel like it's too late, "
+          },
+          {
+            "text": "it's not",
+            "type": "r"
+          },
+          {
+            "text": ", "
+          },
+          {
+            "text": "it's not.",
+            "type": "rm"
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "um, yeah, I don't know if there's anything else I gotta say. just that,",
+            "type": "im"
+          },
+          {
+            "text": " just remember "
+          },
+          {
+            "text": "it's",
+            "type": "rm"
+          },
+          {
+            "text": ", "
+          },
+          {
+            "text": "it's",
+            "type": "r"
+          },
+          {
+            "text": " not too late. I said this in my do it for yourself video, but, "
+          },
+          {
+            "text": "you know,",
+            "type": "im"
+          },
+          {
+            "text": " whatever it is that you're being called to do, if you wanna pick up your paintbrush, "
+          },
+          {
+            "text": "um,",
+            "type": "im"
+          },
+          {
+            "text": " put pen to paper grab your camera, hit record "
+          },
+          {
+            "text": "just do it",
+            "type": "rm"
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "just do it",
+            "type": "r"
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "I",
+            "type": "d"
+          },
+          {
+            "text": ", the only thing you got to lose is maybe a little time and what's gonna happen with that time? I don't even need to say it so I think that's all I got today. I just wanna come on here and share a little bit about what I've been feeling "
+          },
+          {
+            "text": "um,",
+            "type": "im"
+          },
+          {
+            "text": " and hopefully provide a little comfort and inspiration if any of you have been feeling a certain way'cause "
+          },
+          {
+            "text": "you know,",
+            "type": "im"
+          },
+          {
+            "text": " we're not alone in "
+          },
+          {
+            "text": "our",
+            "type": "rm"
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "our",
+            "type": "r"
+          },
+          {
+            "text": " feelings. I think that us as humans, we don't really have a ton of unique feelings "
+          },
+          {
+            "text": "um,",
+            "type": "im"
+          },
+          {
+            "text": " in the way that, the way I feel right now the chances are 100% that somebody has felt all of these things "
+          },
+          {
+            "text": "right",
+            "type": "im"
+          },
+          {
+            "text": "? "
+          },
+          {
+            "text": "and,",
+            "type": "rm"
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "and",
+            "type": "r"
+          },
+          {
+            "text": " so I think it's important that I get the message across that you're not alone. I'm not perfect. I don't have it all figured out. I am not always content with how things are going and "
+          },
+          {
+            "text": "so yeah,",
+            "type": "im"
+          },
+          {
+            "text": " it is what it is. I'm working on it and "
+          },
+          {
+            "text": "you know,",
+            "type": "im"
+          },
+          {
+            "text": " if you're not ready to work on it either, that's OK one day at a time, right? or 10 minutes at a time."
+          }
         ],
-        "referenceTranscript": "And that's been the message is I gotta try. Every day is a new day. I think we gotta try.",
-        "modelTranscript": "That's been the message is I gotta try. Every day is a new day. I think we gotta try.",
+        "referenceTranscript": "and that's been the message is I gotta try. everyday is a new day. if one day you try and you don't feel like it was good enough, , you can go to bed and you'll try again the next day. there was a quote that I read, a little while back and it said, all you gotta focus on is the next 24 hours. and if it's not this 24 hours, just focus on the next hour. if it's not the next hour, just the next 10 minutes. and trying to think back to that, , that message, when I remember about it saves me, ? I have a lot that I feel like I'm kind of stressed about in the next month, 2, 3, whatever. but it's fine. it's alright'cause what I'm doing right now is this. I'm chilling. I think we gotta try. even if you feel like it's too late, it's not, just remember , it's not too late. I said this in my do it for yourself video, but, whatever it is that you're being called to do, if you wanna pick up your paintbrush, put pen to paper grab your camera, hit record just do it , the only thing you got to lose is maybe a little time and what's gonna happen with that time? I don't even need to say it so I think that's all I got today. I just wanna come on here and share a little bit about what I've been feeling and hopefully provide a little comfort and inspiration if any of you have been feeling a certain way'cause we're not alone in our feelings. I think that us as humans, we don't really have a ton of unique feelings in the way that, the way I feel right now the chances are 100% that somebody has felt all of these things ? and so I think it's important that I get the message across that you're not alone. I'm not perfect. I don't have it all figured out. I am not always content with how things are going and it is what it is. I'm working on it and if you're not ready to work on it either, that's OK one day at a time, right? or 10 minutes at a time.",
+        "modelTranscript": "that's been the message is I gotta try. everyday is a new day. if one day you try and you don't feel like it was good enough, you can go to bed and you'll try again the next day. there was a quote that I read a little while back and it said, all you gotta focus on is the next 24 hours. and if it's not this 24 hours, just focus on the next hour. if it's not the next hour, just the next 10 minutes. and trying to think back to that advice, that message, when I remember about it, it saves me. I think we gotta try. even if you feel like it's too late, it's not. just remember it's not too late. whatever it is that you're being called to do, if you wanna pick up your paintbrush, put pen to paper grab your camera, hit record just do it. the only thing you got to lose is a little time. I just wanna share a little bit about what I've been feeling and hopefully provide a little comfort and inspiration because we're not alone in our feelings. you're not alone. I'm not perfect. I don't have it all figured out. I am not always content with how things are going. I'm working on it and if you're not ready to work on it either, that's OK one day at a time, or 10 minutes at a time.",
         "metrics": {}
       },
       {
@@ -54,21 +423,110 @@
         "scenario": "Lifestyle Vlog",
         "model": "Gemini 3.0 Pro",
         "privacyReviewed": true,
-        "privacyNote": "Short transcript excerpt reviewed for public display.",
+        "privacyNote": "Complete transcript reviewed for public display.",
         "focus": "IM · RM→R · D",
         "originalSegments": [
-          {"text": "Alright, like", "type": "im"},
-          {"text": "these peppers, I think they're still good."},
-          {"text": "They don't look like there's any mold.", "type": "rm"},
-          {"text": "Yeah, I don't think there's any mold on them,", "type": "r"},
-          {"text": "but whatever. Um,", "type": "im"},
-          {"text": "I got my Cuciniti order in."},
-          {"text": "I've been doing Cuciniti now for three weeks."},
-          {"text": "You know, I really wish these brands would work with me. I actually just need to reach out to them.", "type": "d"},
-          {"text": "I have found it very hard to cook food when I get home so late."}
+          {
+            "text": "alright, like",
+            "type": "im"
+          },
+          {
+            "text": " these peppers, I think they're still good. "
+          },
+          {
+            "text": "they don't look like there's any mold.",
+            "type": "rm"
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "yeah, I don't think there's any mold on them,",
+            "type": "r"
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "but whatever. um,",
+            "type": "im"
+          },
+          {
+            "text": " I got my cuciniti order in. I've been doing cuciniti now for three weeks. and, "
+          },
+          {
+            "text": "you know,",
+            "type": "im"
+          },
+          {
+            "text": " I really wish, "
+          },
+          {
+            "text": "you know,",
+            "type": "im"
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "these brands would work with me. I actually just need to reach out to them.",
+            "type": "d"
+          },
+          {
+            "text": " but I have found it very hard to cook food when I get home so late after being away for the weekend. so for those weekends in particular, I like to order food that is actually good and that, "
+          },
+          {
+            "text": "um, and",
+            "type": "im"
+          },
+          {
+            "text": " already made the Hello Fresh stuff does not save me time. "
+          },
+          {
+            "text": "it actually,",
+            "type": "im"
+          },
+          {
+            "text": " I actually take more time doing Hello Fresh than I do like this. "
+          },
+          {
+            "text": "um,",
+            "type": "im"
+          },
+          {
+            "text": " and I have these for lunch. it, this is a polano stew, chicken thigh and some Mexican rice. I do like cooking my own food because I have a particular taste and things I like to combine. but when it comes to crunch time weeks like this, I really need it. so I'm all about it. "
+          },
+          {
+            "text": "yeah, like",
+            "type": "im"
+          },
+          {
+            "text": " another one is this vegetable tofu, "
+          },
+          {
+            "text": "you know,",
+            "type": "im"
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "like that looks, oh,",
+            "type": "im"
+          },
+          {
+            "text": " that looks pretty good. and it tells you "
+          },
+          {
+            "text": "like",
+            "type": "im"
+          },
+          {
+            "text": " the macros up here. if you're counting macros, the chef it came from. it's just really awesome. I love it anyway."
+          }
         ],
-        "referenceTranscript": "These peppers, I think they're still good. Yeah, I don't think there's any mold on them. I got my Cuciniti order in. I've been doing Cuciniti now for three weeks. But I have found it very hard to cook food when I get home so late.",
-        "modelTranscript": "I got my Cuciniti order in. I've been doing Cuciniti now for three weeks. I have found it very hard to cook food when I get home so late.",
+        "referenceTranscript": "these peppers, I think they're still good. yeah, I don't think there's any mold on them, I got my cuciniti order in. I've been doing cuciniti now for three weeks. and, I really wish, but I have found it very hard to cook food when I get home so late after being away for the weekend. so for those weekends in particular, I like to order food that is actually good and that, already made the Hello Fresh stuff does not save me time. I actually take more time doing Hello Fresh than I do like this. and I have these for lunch. it, this is a polano stew, chicken thigh and some Mexican rice. I do like cooking my own food because I have a particular taste and things I like to combine. but when it comes to crunch time weeks like this, I really need it. so I'm all about it. another one is this vegetable tofu, that looks pretty good. and it tells you the macros up here. if you're counting macros, the chef it came from. it's just really awesome. I love it anyway.",
+        "modelTranscript": "I got my cuciniti order in. I've been doing cuciniti now for three weeks. I have found it very hard to cook food when I get home so late after being away for the weekend. I like to order food that is good and already made. The Hello Fresh stuff does not save me time. I actually take more time doing Hello Fresh than I do like this. And I have these for lunch. This is a polano stew, chicken thigh and some Mexican rice. I do like cooking my own food because I have a particular taste and things I like to combine. But when it comes to crunch time weeks like this, I really need it. So I'm all about it. Another one is this vegetable tofu, that looks pretty good. And it tells you the macros up here. If you're counting macros, the chef it came from. It's just really awesome. I love it.",
         "metrics": {}
       }
     ]

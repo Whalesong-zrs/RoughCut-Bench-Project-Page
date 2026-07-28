@@ -20,8 +20,6 @@ const elements = {
   caseTabs: document.querySelector("#case-tabs"),
   categorySummary: document.querySelector("#case-category-summary"),
   caseContent: document.querySelector("#case-content"),
-  copyCitation: document.querySelector("#copy-citation"),
-  citationText: document.querySelector("#citation-text"),
 };
 
 function makeElement(tag, className, textContent) {
@@ -358,12 +356,11 @@ function appendTranscriptContent(container, segments) {
     return;
   }
 
-  segments.forEach((segment, index) => {
+  segments.forEach((segment) => {
     const text = typeof segment === "string" ? segment : segment.text;
     const type = typeof segment === "string" ? null : segment.type?.toLowerCase();
     const span = makeElement("span", type ? `transcript-span label-${type}` : null, text);
     container.append(span);
-    if (index < segments.length - 1) container.append(document.createTextNode(" "));
   });
 }
 
@@ -404,7 +401,7 @@ function renderSpeechCase(caseData, category) {
 
   const grid = makeElement("div", "transcript-grid");
   grid.append(
-    makeTranscriptPanel("Original ASR excerpt", caseData.originalSegments),
+    makeTranscriptPanel("Original ASR with annotations", caseData.originalSegments),
     makeTranscriptPanel("Professional Reference", caseData.referenceTranscript),
     makeTranscriptPanel(caseData.model || "Model Output", caseData.modelTranscript),
   );
@@ -427,29 +424,6 @@ function renderExplorer() {
   renderCategoryTabs();
   renderCaseTabs();
   renderCaseContent();
-}
-
-async function copyCitation() {
-  const citation = elements.citationText.textContent.trim();
-  try {
-    await navigator.clipboard.writeText(citation);
-    elements.copyCitation.replaceChildren(makeIcon("check"));
-    elements.copyCitation.title = "Citation copied";
-    elements.copyCitation.setAttribute("aria-label", "Citation copied");
-    refreshIcons();
-    window.setTimeout(() => {
-      elements.copyCitation.replaceChildren(makeIcon("copy"));
-      elements.copyCitation.title = "Copy citation";
-      elements.copyCitation.setAttribute("aria-label", "Copy citation");
-      refreshIcons();
-    }, 1800);
-  } catch {
-    const selection = window.getSelection();
-    const range = document.createRange();
-    range.selectNodeContents(elements.citationText);
-    selection.removeAllRanges();
-    selection.addRange(range);
-  }
 }
 
 function renderLoadError(error) {
@@ -487,7 +461,6 @@ async function initialize() {
 
     renderLeaderboard();
     renderExplorer();
-    elements.copyCitation.addEventListener("click", copyCitation);
     refreshIcons();
   } catch (error) {
     renderLoadError(error);

@@ -204,7 +204,7 @@ video {
 }
 
 .affiliations {
-  margin: 8px auto 26px;
+  margin: 8px auto 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -221,6 +221,23 @@ video {
   margin-right: 3px;
   color: var(--blue);
   font-size: 0.75em;
+  font-weight: 800;
+}
+
+.author-notes {
+  margin: 3px auto 22px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3px 16px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.author-notes sup {
+  margin-right: 3px;
+  color: var(--blue);
+  font-size: 0.8em;
   font-weight: 800;
 }
 
@@ -903,6 +920,14 @@ video {
 
 .citation-inner {
   max-width: 900px;
+}
+
+.citation-placeholder {
+  margin: 0;
+  padding: 20px 0;
+  border-top: 1px solid var(--line-strong);
+  color: var(--muted);
+  font-size: 13px;
 }
 
 .citation-block {
