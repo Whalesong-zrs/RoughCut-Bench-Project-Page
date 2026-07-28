@@ -153,7 +153,6 @@ video {
   text-align: center;
 }
 
-.venue-line,
 .section-kicker {
   margin: 0 0 10px;
   color: var(--blue);
@@ -190,6 +189,13 @@ video {
   font-size: 14px;
 }
 
+.author-list sup {
+  margin-left: 2px;
+  color: var(--blue);
+  font-size: 0.68em;
+  font-weight: 800;
+}
+
 .author-list span:not(:last-child)::after {
   content: "·";
   position: relative;
@@ -198,9 +204,24 @@ video {
 }
 
 .affiliations {
-  margin: 8px 0 26px;
+  margin: 8px auto 26px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2px 16px;
   color: var(--muted);
   font-size: 13px;
+}
+
+.affiliations span {
+  white-space: nowrap;
+}
+
+.affiliations sup {
+  margin-right: 3px;
+  color: var(--blue);
+  font-size: 0.75em;
+  font-weight: 800;
 }
 
 .resource-actions {
