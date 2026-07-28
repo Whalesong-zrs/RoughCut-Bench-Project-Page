@@ -382,7 +382,15 @@ function makeModelTracePanel(caseData) {
   panel.append(makeElement("h4", null, caseData.model || "Model Output"));
 
   const body = makeElement("div", "transcript-text model-trace-body");
-  body.append(makeElement("h5", "trace-heading", "Model edit trace"));
+  body.append(makeElement("h5", "trace-heading", "Cleaned transcript"));
+  const cleaned = makeElement("div", "retained-output");
+  cleaned.append(
+    makeElement("span", "trace-label label-r", "R"),
+    makeElement("p", null, caseData.modelTranscript || "Transcript pending release."),
+  );
+  body.append(cleaned);
+
+  body.append(makeElement("h5", "trace-heading edit-heading", "Model edit trace"));
 
   (caseData.modelEdits || []).forEach((edit) => {
     const rawType = (edit.type || "").toLowerCase();
@@ -406,14 +414,6 @@ function makeModelTracePanel(caseData) {
     }
     body.append(item);
   });
-
-  body.append(makeElement("h5", "trace-heading cleaned-heading", "Cleaned transcript"));
-  const cleaned = makeElement("div", "retained-output");
-  cleaned.append(
-    makeElement("span", "trace-label label-r", "R"),
-    makeElement("p", null, caseData.modelTranscript || "Transcript pending release."),
-  );
-  body.append(cleaned);
   panel.append(body);
   return panel;
 }
@@ -440,13 +440,19 @@ function renderSpeechCase(caseData, category) {
     metricChips.append(makeElement("span", "metric-chip", `${key} ${Number(value).toFixed(3)}`));
   });
 
+  const scrollHint = makeElement("p", "scroll-hint");
+  scrollHint.append(
+    makeIcon("chevrons-up-down"),
+    document.createTextNode("Scroll within each panel to view the complete transcript and edit trace."),
+  );
+
   const grid = makeElement("div", "transcript-grid");
   grid.append(
     makeTranscriptPanel("Original ASR with annotations", caseData.originalSegments),
     makeTranscriptPanel("Professional Reference", caseData.referenceTranscript),
     makeModelTracePanel(caseData),
   );
-  fragment.append(legend, metricChips, grid);
+  fragment.append(legend, metricChips, scrollHint, grid);
   return fragment;
 }
 

@@ -932,7 +932,7 @@ video {
   text-transform: uppercase;
 }
 
-.cleaned-heading {
+.edit-heading {
   margin-top: 20px;
 }
 
@@ -1000,6 +1000,21 @@ video {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 14px;
   line-height: 1.7;
+}
+
+.scroll-hint {
+  margin: 10px 0 11px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.scroll-hint svg {
+  width: 14px;
+  height: 14px;
+  color: var(--blue);
 }
 
 .citation-inner {
