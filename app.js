@@ -268,7 +268,7 @@ function makeVideoCard(media, secondaryLabel) {
   video.muted = true;
   video.defaultMuted = true;
   video.playsInline = true;
-  video.preload = "metadata";
+  video.preload = "none";
   video.src = media.src;
   if (media.poster) video.poster = media.poster;
   video.setAttribute("aria-label", media.label || secondaryLabel || "Video");
