@@ -1,0 +1,98 @@
+{
+  "categories": [
+    {
+      "id": "quality-progression",
+      "label": "Quality Progression",
+      "summary": "Compare outputs from models with lower, middle, and higher benchmark-level visual-quality scores.",
+      "cases": [
+        {
+          "id": "food-preparation",
+          "title": "Food preparation sequence",
+          "domain": "Food",
+          "privacyReviewed": true,
+          "privacyNote": "Face-free visual material; audio removed from all public derivatives.",
+          "scoreNote": "Scores below are model-level Visual Set-1 Overall scores, not per-case ratings.",
+          "sourceVideos": [
+            {"label": "Source 01", "src": "assets/media/case-pepper/source-01.mp4", "poster": "assets/media/case-pepper/source-01.jpg"},
+            {"label": "Source 02", "src": "assets/media/case-pepper/source-02.mp4", "poster": "assets/media/case-pepper/source-02.jpg"},
+            {"label": "Source 03", "src": "assets/media/case-pepper/source-03.mp4", "poster": "assets/media/case-pepper/source-03.jpg"},
+            {"label": "Source 04", "src": "assets/media/case-pepper/source-04.mp4", "poster": "assets/media/case-pepper/source-04.jpg"},
+            {"label": "Source 05", "src": "assets/media/case-pepper/source-05.mp4", "poster": "assets/media/case-pepper/source-05.jpg"},
+            {"label": "Source 06", "src": "assets/media/case-pepper/source-06.mp4", "poster": "assets/media/case-pepper/source-06.jpg"},
+            {"label": "Source 07", "src": "assets/media/case-pepper/source-07.mp4", "poster": "assets/media/case-pepper/source-07.jpg"},
+            {"label": "Source 08", "src": "assets/media/case-pepper/source-08.mp4", "poster": "assets/media/case-pepper/source-08.jpg"},
+            {"label": "Source 09", "src": "assets/media/case-pepper/source-09.mp4", "poster": "assets/media/case-pepper/source-09.jpg"},
+            {"label": "Source 10", "src": "assets/media/case-pepper/source-10.mp4", "poster": "assets/media/case-pepper/source-10.jpg"},
+            {"label": "Source 11", "src": "assets/media/case-pepper/source-11.mp4", "poster": "assets/media/case-pepper/source-11.jpg"},
+            {"label": "Source 12", "src": "assets/media/case-pepper/source-12.mp4", "poster": "assets/media/case-pepper/source-12.jpg"},
+            {"label": "Source 13", "src": "assets/media/case-pepper/source-13.mp4", "poster": "assets/media/case-pepper/source-13.jpg"},
+            {"label": "Source 14", "src": "assets/media/case-pepper/source-14.mp4", "poster": "assets/media/case-pepper/source-14.jpg"},
+            {"label": "Source 15", "src": "assets/media/case-pepper/source-15.mp4", "poster": "assets/media/case-pepper/source-15.jpg"},
+            {"label": "Source 16", "src": "assets/media/case-pepper/source-16.mp4", "poster": "assets/media/case-pepper/source-16.jpg"},
+            {"label": "Source 17", "src": "assets/media/case-pepper/source-17.mp4", "poster": "assets/media/case-pepper/source-17.jpg"},
+            {"label": "Source 18", "src": "assets/media/case-pepper/source-18.mp4", "poster": "assets/media/case-pepper/source-18.jpg"},
+            {"label": "Source 19", "src": "assets/media/case-pepper/source-19.mp4", "poster": "assets/media/case-pepper/source-19.jpg"}
+          ],
+          "reference": {
+            "label": "Professional Reference",
+            "src": "assets/media/case-pepper/professional-reference.mp4",
+            "poster": "assets/media/case-pepper/professional-reference.jpg"
+          },
+          "predictions": [
+            {"label": "Lower", "model": "Seed-2.0-Lite", "src": "assets/media/case-pepper/seed-2.0-lite.mp4", "poster": "assets/media/case-pepper/seed-2.0-lite.jpg", "metrics": {"Benchmark Overall": 2.73}},
+            {"label": "Middle", "model": "Qwen3.5-Plus", "src": "assets/media/case-pepper/qwen-3.5-plus.mp4", "poster": "assets/media/case-pepper/qwen-3.5-plus.jpg", "metrics": {"Benchmark Overall": 2.95}},
+            {"label": "Higher", "model": "Gemini 3.0 Pro", "src": "assets/media/case-pepper/gemini-3-pro.mp4", "poster": "assets/media/case-pepper/gemini-3-pro.jpg", "metrics": {"Benchmark Overall": 3.13}}
+          ]
+        },
+        {
+          "id": "outdoor-sequence",
+          "title": "Outdoor travel sequence",
+          "domain": "Outdoor Vlog",
+          "privacyReviewed": false,
+          "sourceVideos": [],
+          "reference": null,
+          "predictions": []
+        },
+        {
+          "id": "product-sequence",
+          "title": "Product demonstration sequence",
+          "domain": "Product/DIY",
+          "privacyReviewed": false,
+          "sourceVideos": [],
+          "reference": null,
+          "predictions": []
+        }
+      ]
+    },
+    {
+      "id": "multiple-valid",
+      "label": "Multiple Valid Cuts",
+      "summary": "Cases where annotation agreement and rendered-cut quality provide different signals.",
+      "cases": [
+        {"id": "low-f1", "title": "Alternative highlight coverage", "domain": "Daily Life", "privacyReviewed": false, "sourceVideos": [], "reference": null, "predictions": [], "selectionRule": "Low highlight F1, high Agent Overall"},
+        {"id": "low-tau", "title": "Alternative source-video order", "domain": "Outdoor Vlog", "privacyReviewed": false, "sourceVideos": [], "reference": null, "predictions": [], "selectionRule": "Low Kendall's τ, high Agent Overall"},
+        {"id": "low-both", "title": "Alternative selection and order", "domain": "Sports/Games", "privacyReviewed": false, "sourceVideos": [], "reference": null, "predictions": [], "selectionRule": "Low F1 and Kendall's τ, high Agent Overall"}
+      ]
+    },
+    {
+      "id": "prompt-following",
+      "label": "Prompt Following",
+      "summary": "Requirement-constrained cuts covering duration, content selection, and source-video order.",
+      "cases": [
+        {"id": "duration", "title": "Target-duration requirement", "domain": "Food", "requirement": "Create a cut close to the requested target duration.", "privacyReviewed": false, "sourceVideos": [], "reference": null, "predictions": []},
+        {"id": "selection", "title": "Content retain/remove requirement", "domain": "Product/DIY", "requirement": "Retain the product close-ups and remove repeated setup shots.", "privacyReviewed": false, "sourceVideos": [], "reference": null, "predictions": []},
+        {"id": "ordering", "title": "Source-video ordering requirement", "domain": "Daily Life", "requirement": "Place the finished result first, then show the preparation process.", "privacyReviewed": false, "sourceVideos": [], "reference": null, "predictions": []}
+      ]
+    },
+    {
+      "id": "cross-domain",
+      "label": "Cross-Domain",
+      "summary": "Privacy-reviewed examples from distinct real-world creation domains.",
+      "cases": [
+        {"id": "food-domain", "title": "Food", "domain": "Food", "privacyReviewed": false, "sourceVideos": [], "reference": null, "predictions": []},
+        {"id": "diy-domain", "title": "Product and DIY", "domain": "Product/DIY", "privacyReviewed": false, "sourceVideos": [], "reference": null, "predictions": []},
+        {"id": "sports-domain", "title": "Sports and games", "domain": "Sports/Games", "privacyReviewed": false, "sourceVideos": [], "reference": null, "predictions": []}
+      ]
+    }
+  ]
+}

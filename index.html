@@ -3,9 +3,172 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RoughCut-Bench is a benchmark for automatic video rough-cut with large vision-language models.">
+  <meta name="theme-color" content="#ffffff">
   <title>RoughCut-Bench</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script defer src="app.js"></script>
 </head>
 <body>
-  <h1>RoughCut-Bench</h1>
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="RoughCut-Bench home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        RoughCut-Bench
+      </a>
+      <div class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#leaderboard">Leaderboard</a>
+        <a href="#explorer">Case Explorer</a>
+        <a href="#citation">Citation</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <p class="venue-line">KDD 2027 · Datasets &amp; Benchmarks Track</p>
+        <h1 id="hero-title">RoughCut-Bench</h1>
+        <p class="hero-subtitle">A Benchmark for Automatic Video Rough-Cut with Large Vision-Language Models</p>
+
+        <div class="author-list" aria-label="Authors">
+          <span>Ruisi Zhao</span><span>You Li</span><span>Sihan Chen</span><span>Aosong Cheng</span>
+          <span>Chixiang Ma</span><span>Sen Pei</span><span>Zhen Yang</span><span>Hehe Fan</span>
+          <span>Dongliang He</span><span>Yi Yang</span>
+        </div>
+        <p class="affiliations">Zhejiang University · ByteDance · Peking University</p>
+
+        <div class="resource-actions" aria-label="Project resources">
+          <button class="resource-button" type="button" disabled>
+            <i data-lucide="file-text" aria-hidden="true"></i>
+            <span>Paper</span><small>Coming Soon</small>
+          </button>
+          <button class="resource-button" type="button" disabled>
+            <i data-lucide="github" aria-hidden="true"></i>
+            <span>Code</span><small>Coming Soon</small>
+          </button>
+          <button class="resource-button" type="button" disabled>
+            <i data-lucide="database" aria-hidden="true"></i>
+            <span>Dataset</span><small>Coming Soon</small>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="overview" class="section">
+      <div class="section-inner">
+        <div class="section-heading">
+          <p class="section-kicker">Overview</p>
+          <h2>Evaluating executable rough-cut plans</h2>
+        </div>
+        <div class="overview-copy">
+          <p>
+            Video rough-cut organizes raw media into an initial cut through highlight detection and
+            selection, source-video ordering, and spoken-content refinement. RoughCut-Bench studies
+            this compositional creation task through visually driven video cases and speech-driven
+            ASR cases.
+          </p>
+          <p>
+            The benchmark combines annotation-based metrics with human-aligned assessment of
+            rendered cuts. Proposed agentic workflows guide representative LVLMs to produce
+            structured cut plans from the input materials.
+          </p>
+        </div>
+
+        <div class="stats-band" aria-label="Dataset statistics">
+          <div><strong>101</strong><span>Visual cases</span></div>
+          <div><strong>831</strong><span>Raw videos</span></div>
+          <div><strong>1,476</strong><span>Highlight annotations</span></div>
+          <div><strong>39</strong><span>Cases with requirements</span></div>
+          <div><strong>84</strong><span>Speech cases</span></div>
+        </div>
+
+        <figure class="paper-figure paper-figure-wide">
+          <img src="assets/figures/workflow.png" alt="Overview of the RoughCut-Bench settings, proposed agentic workflows, and evaluation protocols.">
+          <figcaption>Benchmark settings, agentic workflows, and evaluation protocols.</figcaption>
+        </figure>
+
+        <figure class="paper-figure">
+          <img src="assets/figures/data-analysis.png" alt="Dataset distributions for visual scenarios, video duration, and speech cleanup annotations.">
+          <figcaption>Dataset composition and annotation distributions.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="leaderboard" class="section section-tinted">
+      <div class="section-inner">
+        <div class="section-heading section-heading-row">
+          <div>
+            <p class="section-kicker">Leaderboard</p>
+            <h2>Performance across rough-cut dimensions</h2>
+          </div>
+          <p class="section-note">Click a metric header to rank models. No cross-setting aggregate is used.</p>
+        </div>
+
+        <div id="leaderboard-view-tabs" class="segmented-control" role="tablist" aria-label="Leaderboard view"></div>
+        <div class="leaderboard-toolbar">
+          <div id="leaderboard-set-tabs" class="case-tabs" role="tablist" aria-label="Evaluation set"></div>
+          <p id="leaderboard-rank-label" class="rank-label" aria-live="polite"></p>
+        </div>
+        <p id="leaderboard-description" class="leaderboard-description"></p>
+        <div id="leaderboard-table" class="table-wrap" aria-live="polite"></div>
+        <div class="family-legend" aria-label="Model families">
+          <span class="family-gemini">Gemini</span>
+          <span class="family-gpt">GPT</span>
+          <span class="family-qwen">Qwen</span>
+          <span class="family-other">Other</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="explorer" class="section">
+      <div class="section-inner">
+        <div class="section-heading section-heading-row">
+          <div>
+            <p class="section-kicker">Case Explorer</p>
+            <h2>Inspect the inputs, references, and outputs</h2>
+          </div>
+          <p class="section-note">All public visual examples are muted and privacy reviewed.</p>
+        </div>
+
+        <div id="case-category-tabs" class="explorer-categories" role="tablist" aria-label="Case category"></div>
+        <div class="explorer-toolbar">
+          <div id="case-tabs" class="case-tabs" role="tablist" aria-label="Cases"></div>
+          <p id="case-category-summary" class="category-summary"></p>
+        </div>
+        <div id="case-content" class="case-content" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="citation" class="section section-tinted">
+      <div class="section-inner citation-inner">
+        <div class="section-heading">
+          <p class="section-kicker">Citation</p>
+          <h2>Reference RoughCut-Bench</h2>
+        </div>
+        <div class="citation-block">
+          <pre id="citation-text">@inproceedings{zhao2027roughcutbench,
+  title     = {RoughCut-Bench: A Benchmark for Automatic Video Rough-Cut with Large Vision-Language Models},
+  author    = {Zhao, Ruisi and Li, You and Chen, Sihan and others},
+  booktitle = {Proceedings of the 33rd ACM SIGKDD Conference on Knowledge Discovery and Data Mining},
+  year      = {2027}
+}</pre>
+          <button id="copy-citation" class="icon-button" type="button" title="Copy citation" aria-label="Copy citation">
+            <i data-lucide="copy" aria-hidden="true"></i>
+          </button>
+        </div>
+        <p class="citation-note">Citation metadata will be updated after publication.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>RoughCut-Bench · Automatic video rough-cut evaluation</p>
+    <a href="#top">Back to top</a>
+  </footer>
+
+  <noscript>This project page requires JavaScript for the leaderboard and case explorer.</noscript>
 </body>
 </html>

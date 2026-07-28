@@ -1,0 +1,45 @@
+{
+  "category": {
+    "id": "speech-cleanup-cases",
+    "label": "Speech Cleanup",
+    "summary": "High-scoring transcript-cleanup cases covering the three annotated operations.",
+    "cases": [
+      {
+        "id": "beauty-im",
+        "title": "Beauty tutorial · filler removal",
+        "scenario": "Beauty/Fashion",
+        "model": "Model output pending release",
+        "privacyReviewed": false,
+        "focus": "IM",
+        "originalSegments": [],
+        "referenceTranscript": "",
+        "modelTranscript": "",
+        "metrics": {}
+      },
+      {
+        "id": "qa-rm",
+        "title": "Q&A · expression deduplication",
+        "scenario": "Podcast/Q&A",
+        "model": "Model output pending release",
+        "privacyReviewed": false,
+        "focus": "RM→R",
+        "originalSegments": [],
+        "referenceTranscript": "",
+        "modelTranscript": "",
+        "metrics": {}
+      },
+      {
+        "id": "lifestyle-d",
+        "title": "Lifestyle vlog · low-value trimming",
+        "scenario": "Lifestyle Vlog",
+        "model": "Model output pending release",
+        "privacyReviewed": false,
+        "focus": "D",
+        "originalSegments": [],
+        "referenceTranscript": "",
+        "modelTranscript": "",
+        "metrics": {}
+      }
+    ]
+  }
+}

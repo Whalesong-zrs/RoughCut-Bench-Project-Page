@@ -1,0 +1,139 @@
+{
+  "views": [
+    {
+      "id": "visual-annotation",
+      "label": "Visual Annotation",
+      "description": "Agreement between predicted cut plans and professional annotations.",
+      "defaultSet": "set1",
+      "sets": [
+        {
+          "id": "set1",
+          "label": "Visual Set-1",
+          "defaultSort": "f1",
+          "columns": [
+            {"key": "precision", "label": "Precision"},
+            {"key": "recall", "label": "Recall"},
+            {"key": "f1", "label": "F1"},
+            {"key": "avgIou", "label": "Avg. IoU"},
+            {"key": "tau", "label": "Kendall's τ"}
+          ],
+          "rows": [
+            {"model": "Gemini 2.5 Pro", "family": "gemini", "precision": 0.467, "recall": 0.556, "f1": 0.508, "avgIou": 0.437, "tau": 0.556},
+            {"model": "Gemini 3.0 Pro", "family": "gemini", "precision": 0.490, "recall": 0.568, "f1": 0.526, "avgIou": 0.440, "tau": 0.565},
+            {"model": "GPT-5.4", "family": "gpt", "precision": 0.443, "recall": 0.597, "f1": 0.509, "avgIou": 0.428, "tau": 0.512},
+            {"model": "GPT-5.5", "family": "gpt", "precision": 0.446, "recall": 0.604, "f1": 0.513, "avgIou": 0.420, "tau": 0.542},
+            {"model": "Qwen3.5-Plus", "family": "qwen", "precision": 0.468, "recall": 0.571, "f1": 0.514, "avgIou": 0.441, "tau": 0.471},
+            {"model": "Qwen3.7-Plus", "family": "qwen", "precision": 0.459, "recall": 0.595, "f1": 0.518, "avgIou": 0.429, "tau": 0.535},
+            {"model": "GLM-5V-Turbo", "family": "other", "precision": 0.418, "recall": 0.564, "f1": 0.480, "avgIou": 0.396, "tau": 0.509},
+            {"model": "Seed-2.0-Lite", "family": "other", "precision": 0.451, "recall": 0.598, "f1": 0.514, "avgIou": 0.424, "tau": 0.539}
+          ]
+        },
+        {
+          "id": "set2",
+          "label": "Visual Set-2",
+          "defaultSort": "f1",
+          "columns": [
+            {"key": "precision", "label": "Precision"},
+            {"key": "recall", "label": "Recall"},
+            {"key": "f1", "label": "F1"},
+            {"key": "avgIou", "label": "Avg. IoU"},
+            {"key": "tau", "label": "Kendall's τ"}
+          ],
+          "rows": [
+            {"model": "Gemini 2.5 Pro", "family": "gemini", "precision": 0.344, "recall": 0.341, "f1": 0.342, "avgIou": 0.354, "tau": 0.654},
+            {"model": "Gemini 3.0 Pro", "family": "gemini", "precision": 0.345, "recall": 0.342, "f1": 0.343, "avgIou": 0.358, "tau": 0.692},
+            {"model": "GPT-5.4", "family": "gpt", "precision": 0.265, "recall": 0.301, "f1": 0.282, "avgIou": 0.315, "tau": 0.610},
+            {"model": "GPT-5.5", "family": "gpt", "precision": 0.311, "recall": 0.343, "f1": 0.326, "avgIou": 0.336, "tau": 0.702},
+            {"model": "Qwen3.5-Plus", "family": "qwen", "precision": 0.288, "recall": 0.316, "f1": 0.301, "avgIou": 0.351, "tau": 0.678},
+            {"model": "Qwen3.7-Plus", "family": "qwen", "precision": 0.279, "recall": 0.272, "f1": 0.275, "avgIou": 0.336, "tau": 0.706},
+            {"model": "GLM-5V-Turbo", "family": "other", "precision": 0.241, "recall": 0.271, "f1": 0.255, "avgIou": 0.308, "tau": 0.594},
+            {"model": "Seed-2.0-Lite", "family": "other", "precision": 0.292, "recall": 0.339, "f1": 0.314, "avgIou": 0.326, "tau": 0.715}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "visual-quality",
+      "label": "Visual Quality",
+      "description": "Human-aligned evaluation of rendered cuts on a 1–5 scale.",
+      "defaultSet": "set1",
+      "sets": [
+        {
+          "id": "set1",
+          "label": "Visual Set-1",
+          "defaultSort": "overall",
+          "columns": [
+            {"key": "ordering", "label": "Ordering"},
+            {"key": "redundancy", "label": "Redundancy"},
+            {"key": "overall", "label": "Overall"},
+            {"key": "human", "label": "Human Score", "digits": 2}
+          ],
+          "rows": [
+            {"model": "Gemini 2.5 Pro", "family": "gemini", "ordering": 3.33, "redundancy": 2.52, "overall": 3.11, "human": 3.46},
+            {"model": "Gemini 3.0 Pro", "family": "gemini", "ordering": 3.30, "redundancy": 2.58, "overall": 3.13, "human": 3.52},
+            {"model": "GPT-5.4", "family": "gpt", "ordering": 3.15, "redundancy": 2.07, "overall": 2.82, "human": 2.70},
+            {"model": "GPT-5.5", "family": "gpt", "ordering": 3.30, "redundancy": 2.05, "overall": 2.88, "human": 2.88},
+            {"model": "Qwen3.5-Plus", "family": "qwen", "ordering": 3.18, "redundancy": 2.32, "overall": 2.95, "human": 3.22},
+            {"model": "Qwen3.7-Plus", "family": "qwen", "ordering": 2.99, "redundancy": 2.24, "overall": 2.86, "human": 2.82},
+            {"model": "GLM-5V-Turbo", "family": "other", "ordering": 3.19, "redundancy": 2.24, "overall": 2.90, "human": 3.06},
+            {"model": "Seed-2.0-Lite", "family": "other", "ordering": 3.04, "redundancy": 2.07, "overall": 2.73, "human": 2.56}
+          ]
+        },
+        {
+          "id": "set2",
+          "label": "Visual Set-2",
+          "defaultSort": "overall",
+          "columns": [
+            {"key": "ordering", "label": "Ordering"},
+            {"key": "requirement", "label": "Requirement"},
+            {"key": "redundancy", "label": "Redundancy"},
+            {"key": "overall", "label": "Overall"},
+            {"key": "human", "label": "Human Score", "digits": 2}
+          ],
+          "rows": [
+            {"model": "Gemini 2.5 Pro", "family": "gemini", "ordering": 3.66, "requirement": 4.31, "redundancy": 2.97, "overall": 3.60, "human": 3.76},
+            {"model": "Gemini 3.0 Pro", "family": "gemini", "ordering": 3.46, "requirement": 4.09, "redundancy": 2.87, "overall": 3.42, "human": 3.50},
+            {"model": "GPT-5.4", "family": "gpt", "ordering": 3.69, "requirement": 4.15, "redundancy": 2.68, "overall": 3.47, "human": 3.60},
+            {"model": "GPT-5.5", "family": "gpt", "ordering": 3.43, "requirement": 4.16, "redundancy": 2.68, "overall": 3.45, "human": 3.42},
+            {"model": "Qwen3.5-Plus", "family": "qwen", "ordering": 3.35, "requirement": 4.14, "redundancy": 2.68, "overall": 3.36, "human": 3.35},
+            {"model": "Qwen3.7-Plus", "family": "qwen", "ordering": 3.53, "requirement": 4.21, "redundancy": 2.80, "overall": 3.49, "human": 3.68},
+            {"model": "GLM-5V-Turbo", "family": "other", "ordering": 3.26, "requirement": 4.03, "redundancy": 2.63, "overall": 3.32, "human": 3.26},
+            {"model": "Seed-2.0-Lite", "family": "other", "ordering": 3.38, "requirement": 3.96, "redundancy": 2.62, "overall": 3.27, "human": 3.08}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "speech-cleanup",
+      "label": "Speech Cleanup",
+      "description": "Annotation-based cleanup results over ASR transcripts.",
+      "defaultSet": "all",
+      "sets": [
+        {
+          "id": "all",
+          "label": "All Speech Cases",
+          "defaultSort": "imF1",
+          "columns": [
+            {"key": "imP", "label": "IM P"},
+            {"key": "imR", "label": "IM R"},
+            {"key": "imF1", "label": "IM F1"},
+            {"key": "rmSuccess", "label": "RM→R Succ."},
+            {"key": "dP", "label": "D P"},
+            {"key": "dR", "label": "D R"},
+            {"key": "dF1", "label": "D F1"}
+          ],
+          "rows": [
+            {"model": "Gemini 2.5 Pro", "family": "gemini", "imP": 0.430, "imR": 0.891, "imF1": 0.581, "rmSuccess": 0.491, "dP": 0.707, "dR": 0.609, "dF1": 0.654},
+            {"model": "Gemini 3.0 Pro", "family": "gemini", "imP": 0.416, "imR": 0.898, "imF1": 0.569, "rmSuccess": 0.497, "dP": 0.692, "dR": 0.609, "dF1": 0.648},
+            {"model": "GPT-5.4", "family": "gpt", "imP": 0.332, "imR": 0.837, "imF1": 0.475, "rmSuccess": 0.357, "dP": 0.651, "dR": 0.693, "dF1": 0.671},
+            {"model": "GPT-5.5", "family": "gpt", "imP": 0.403, "imR": 0.913, "imF1": 0.559, "rmSuccess": 0.340, "dP": 0.670, "dR": 0.610, "dF1": 0.639},
+            {"model": "Qwen3.5-Plus", "family": "qwen", "imP": 0.511, "imR": 0.785, "imF1": 0.617, "rmSuccess": 0.535, "dP": 0.732, "dR": 0.444, "dF1": 0.543},
+            {"model": "Qwen3.7-Plus", "family": "qwen", "imP": 0.613, "imR": 0.661, "imF1": 0.636, "rmSuccess": 0.485, "dP": 0.828, "dR": 0.448, "dF1": 0.580},
+            {"model": "GLM-5V-Turbo", "family": "other", "imP": 0.533, "imR": 0.769, "imF1": 0.630, "rmSuccess": 0.537, "dP": 0.745, "dR": 0.428, "dF1": 0.543},
+            {"model": "Seed-2.0-Lite", "family": "other", "imP": 0.691, "imR": 0.650, "imF1": 0.670, "rmSuccess": 0.446, "dP": 0.750, "dR": 0.104, "dF1": 0.183}
+          ]
+        }
+      ]
+    }
+  ]
+}
