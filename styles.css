@@ -763,6 +763,11 @@ video {
   gap: 13px;
 }
 
+.comparison-grid.comparison-grid-pair {
+  grid-template-columns: repeat(2, minmax(0, 360px));
+  justify-content: center;
+}
+
 .media-item {
   min-width: 0;
   border: 1px solid var(--line-strong);
@@ -1244,6 +1249,10 @@ a:focus-visible {
   }
 
   .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-grid.comparison-grid-pair {
     grid-template-columns: 1fr;
   }
 

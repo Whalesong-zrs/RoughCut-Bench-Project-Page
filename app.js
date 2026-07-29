@@ -338,6 +338,8 @@ function renderVisualCase(caseData, category) {
   const comparisonSection = makeElement("section", "media-section");
   comparisonSection.append(makeElement("h4", null, "Reference and model outputs"));
   const comparison = makeElement("div", "comparison-grid");
+  const comparisonCount = (caseData.reference ? 1 : 0) + caseData.predictions.length;
+  if (comparisonCount === 2) comparison.classList.add("comparison-grid-pair");
   if (caseData.reference) {
     comparison.append(makeVideoCard(caseData.reference, "Professional cut"));
   }

@@ -253,11 +253,11 @@
     {
       "id": "multiple-valid",
       "label": "Beyond the Reference",
-      "summary": "Different source-video orders can produce coherent cuts even when they disagree with a single professional reference.",
+      "summary": "Different highlight boundaries and source-video orders can produce coherent cuts that differ from a single professional reference.",
       "cases": [
         {
           "id": "alternative-toy-stunts",
-          "title": "Alternative toy-stunt sequence",
+          "title": "Toy-stunt sequence",
           "domain": "Product/DIY",
           "privacyReviewed": true,
           "privacyNote": "Face-free visual material; audio removed from all public derivatives.",
@@ -280,6 +280,79 @@
               "label": "Gemini 3.0 Pro",
               "src": "assets/media/case-alternative-toy-stunts/gemini-3-pro.mp4",
               "poster": "assets/media/case-alternative-toy-stunts/gemini-3-pro.jpg",
+              "displayModelOnly": true
+            }
+          ]
+        },
+        {
+          "id": "alternative-travel-day",
+          "title": "Travel-day sequence",
+          "domain": "Daily Life",
+          "privacyReviewed": true,
+          "privacyNote": "No clearly identifiable faces; audio removed from all public derivatives.",
+          "scoreNote": "All displayed cuts satisfy the requested opening and approximate duration but arrange the remaining videos differently.",
+          "selectionRule": "Multiple acceptable cut plans",
+          "requirement": "Make it around 15 seconds. Start with the cat coffee art.",
+          "sourceVideos": [
+            {"label": "Source 01", "src": "assets/media/case-alternative-travel-day/source-01.mp4", "poster": "assets/media/case-alternative-travel-day/source-01.jpg"},
+            {"label": "Source 02", "src": "assets/media/case-alternative-travel-day/source-02.mp4", "poster": "assets/media/case-alternative-travel-day/source-02.jpg"},
+            {"label": "Source 03", "src": "assets/media/case-alternative-travel-day/source-03.mp4", "poster": "assets/media/case-alternative-travel-day/source-03.jpg"},
+            {"label": "Source 04", "src": "assets/media/case-alternative-travel-day/source-04.mp4", "poster": "assets/media/case-alternative-travel-day/source-04.jpg"},
+            {"label": "Source 05", "src": "assets/media/case-alternative-travel-day/source-05.mp4", "poster": "assets/media/case-alternative-travel-day/source-05.jpg"},
+            {"label": "Source 06", "src": "assets/media/case-alternative-travel-day/source-06.mp4", "poster": "assets/media/case-alternative-travel-day/source-06.jpg"},
+            {"label": "Source 07", "src": "assets/media/case-alternative-travel-day/source-07.mp4", "poster": "assets/media/case-alternative-travel-day/source-07.jpg"}
+          ],
+          "reference": {
+            "label": "Professional Reference",
+            "src": "assets/media/case-alternative-travel-day/professional-reference.mp4",
+            "poster": "assets/media/case-alternative-travel-day/professional-reference.jpg"
+          },
+          "predictions": [
+            {
+              "label": "GLM-5V-Turbo",
+              "src": "assets/media/case-alternative-travel-day/glm-5v-turbo.mp4",
+              "poster": "assets/media/case-alternative-travel-day/glm-5v-turbo.jpg",
+              "displayModelOnly": true
+            },
+            {
+              "label": "Qwen3.5-Plus",
+              "src": "assets/media/case-alternative-travel-day/qwen-3.5-plus.mp4",
+              "poster": "assets/media/case-alternative-travel-day/qwen-3.5-plus.jpg",
+              "displayModelOnly": true
+            }
+          ]
+        },
+        {
+          "id": "alternative-volleyball",
+          "title": "Volleyball highlights",
+          "domain": "Sports/Games",
+          "privacyReviewed": true,
+          "privacyNote": "Participants are not identifiable at the displayed distance; audio removed from all public derivatives.",
+          "scoreNote": "The displayed cuts select highlight moments from the same four videos with different boundaries and ordering.",
+          "selectionRule": "Multiple acceptable cut plans",
+          "requirement": "Keep the highlight moments of the hits.",
+          "sourceVideos": [
+            {"label": "Source 01", "src": "assets/media/case-alternative-volleyball/source-01.mp4", "poster": "assets/media/case-alternative-volleyball/source-01.jpg"},
+            {"label": "Source 02", "src": "assets/media/case-alternative-volleyball/source-02.mp4", "poster": "assets/media/case-alternative-volleyball/source-02.jpg"},
+            {"label": "Source 03", "src": "assets/media/case-alternative-volleyball/source-03.mp4", "poster": "assets/media/case-alternative-volleyball/source-03.jpg"},
+            {"label": "Source 04", "src": "assets/media/case-alternative-volleyball/source-04.mp4", "poster": "assets/media/case-alternative-volleyball/source-04.jpg"}
+          ],
+          "reference": {
+            "label": "Professional Reference",
+            "src": "assets/media/case-alternative-volleyball/professional-reference.mp4",
+            "poster": "assets/media/case-alternative-volleyball/professional-reference.jpg"
+          },
+          "predictions": [
+            {
+              "label": "Qwen3.5-Plus",
+              "src": "assets/media/case-alternative-volleyball/qwen-3.5-plus.mp4",
+              "poster": "assets/media/case-alternative-volleyball/qwen-3.5-plus.jpg",
+              "displayModelOnly": true
+            },
+            {
+              "label": "Qwen3.7-Plus",
+              "src": "assets/media/case-alternative-volleyball/qwen-3.7-plus.mp4",
+              "poster": "assets/media/case-alternative-volleyball/qwen-3.7-plus.jpg",
               "displayModelOnly": true
             }
           ]
