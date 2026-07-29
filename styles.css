@@ -404,6 +404,7 @@ video {
 }
 
 .segmented-control,
+.explorer-modes,
 .explorer-categories {
   display: flex;
   gap: 0;
@@ -420,6 +421,7 @@ video {
 }
 
 .segmented-control button,
+.explorer-modes button,
 .explorer-categories button,
 .case-tabs button {
   border: 0;
@@ -624,8 +626,56 @@ video {
 .family-legend .family-qwen { background: #fffbef; }
 .family-legend .family-other { background: #faf7ff; }
 
+.explorer-mode-bar {
+  margin-top: 4px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.explorer-modes {
+  flex: 0 0 auto;
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  background: #fff;
+}
+
+.explorer-modes button {
+  min-width: 190px;
+  padding: 11px 16px;
+  border-right: 1px solid var(--line);
+  color: var(--muted);
+  background: transparent;
+  font-size: 13px;
+  font-weight: 780;
+  white-space: nowrap;
+}
+
+.explorer-modes button:last-child {
+  border-right: 0;
+}
+
+.explorer-modes button[aria-selected="true"] {
+  color: #fff;
+  background: var(--blue-deep);
+}
+
+.modality-summary {
+  max-width: 680px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.55;
+  text-align: right;
+  text-wrap: balance;
+}
+
 .explorer-categories {
   gap: 8px;
+  margin-top: 18px;
   padding-bottom: 10px;
 }
 
@@ -761,11 +811,6 @@ video {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 13px;
-}
-
-.scenario-gallery-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 560px);
 }
 
 .media-item {
@@ -1185,6 +1230,7 @@ a:focus-visible {
 
   .section-heading-row,
   .leaderboard-toolbar,
+  .explorer-mode-bar,
   .explorer-toolbar,
   .case-header {
     align-items: start;
@@ -1193,10 +1239,22 @@ a:focus-visible {
   }
 
   .section-note,
+  .modality-summary,
   .category-summary,
   .case-note {
     max-width: none;
     text-align: left;
+  }
+
+  .explorer-modes {
+    width: 100%;
+  }
+
+  .explorer-modes button {
+    flex: 1;
+    min-width: 0;
+    padding-inline: 6px;
+    font-size: 12px;
   }
 
   .overview-copy {

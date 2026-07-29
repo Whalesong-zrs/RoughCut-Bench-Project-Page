@@ -6,9 +6,9 @@
   <meta name="description" content="RoughCut-Bench is a benchmark for automatic video rough-cut with large vision-language models.">
   <meta name="theme-color" content="#ffffff">
   <title>RoughCut-Bench</title>
-  <link rel="stylesheet" href="styles.css?v=20260729-4">
+  <link rel="stylesheet" href="styles.css?v=20260729-5">
   <script defer src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
-  <script defer src="app.js?v=20260729-4"></script>
+  <script defer src="app.js?v=20260729-5"></script>
 </head>
 <body>
   <header class="site-header">
@@ -145,9 +145,13 @@
             <p class="section-kicker">Case Explorer</p>
             <h2>Inspect the inputs, <span class="heading-phrase">references, and outputs</span></h2>
           </div>
-          <p class="section-note">All public visual examples are muted and privacy reviewed.</p>
+          <p class="section-note">All public examples are privacy reviewed; visual media are muted.</p>
         </div>
 
+        <div class="explorer-mode-bar">
+          <div id="case-modality-tabs" class="explorer-modes" role="tablist" aria-label="Rough-cut setting"></div>
+          <p id="case-modality-summary" class="modality-summary"></p>
+        </div>
         <div id="case-category-tabs" class="explorer-categories" role="tablist" aria-label="Case category"></div>
         <div class="explorer-toolbar">
           <div id="case-tabs" class="case-tabs" role="tablist" aria-label="Cases"></div>

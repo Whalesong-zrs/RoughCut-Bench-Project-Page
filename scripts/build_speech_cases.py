@@ -7,27 +7,105 @@ import re
 from pathlib import Path
 
 
-CASE_METADATA = [
+SPEECH_CATEGORIES = [
     {
-        "id": "beauty-im",
-        "source": "case4_5",
-        "title": "Concealer tutorial",
-        "scenario": "Beauty/Fashion",
-        "metrics": {"IM F1": 1.000, "RM→R Succ.": 1.000, "D F1": 0.996},
+        "id": "filler-removal",
+        "label": "Filler Removal",
+        "summary": (
+            "Removing local fillers and discourse markers while preserving the "
+            "surrounding spoken content."
+        ),
+        "focus": "IM",
+        "cases": [
+            {
+                "id": "beauty-im",
+                "source": "case4_5",
+                "title": "Concealer tutorial",
+                "scenario": "Beauty/Fashion",
+                "metrics": {
+                    "IM F1": 1.000,
+                    "RM→R Succ.": 1.000,
+                    "D F1": 0.996,
+                },
+            },
+            {
+                "id": "makeup-primer-im",
+                "source": "case4_8",
+                "title": "Makeup primer tutorial",
+                "scenario": "Beauty/Fashion",
+                "metrics": {
+                    "IM F1": 1.000,
+                    "RM→R Succ.": 1.000,
+                    "D F1": 0.643,
+                },
+            },
+        ],
     },
     {
-        "id": "qa-rm",
-        "source": "case3_4",
-        "title": "Reflective monologue",
-        "scenario": "Podcast/Q&A",
-        "metrics": {"IM F1": 0.824, "RM→R Succ.": 0.889, "D F1": 0.853},
+        "id": "expression-deduplication",
+        "label": "Expression Deduplication",
+        "summary": (
+            "Removing redundant or erroneous expressions while retaining the "
+            "intended expression in each correction pair."
+        ),
+        "focus": "RM→R",
+        "cases": [
+            {
+                "id": "qa-rm",
+                "source": "case3_4",
+                "title": "Reflective monologue",
+                "scenario": "Podcast/Q&A",
+                "metrics": {
+                    "IM F1": 0.824,
+                    "RM→R Succ.": 0.889,
+                    "D F1": 0.853,
+                },
+            },
+            {
+                "id": "london-rm",
+                "source": "case17_2",
+                "title": "London morning routine",
+                "scenario": "Lifestyle Vlog",
+                "metrics": {
+                    "IM F1": 0.545,
+                    "RM→R Succ.": 1.000,
+                    "D F1": 0.876,
+                },
+            },
+        ],
     },
     {
-        "id": "lifestyle-d",
-        "source": "case6_2",
-        "title": "Food review",
-        "scenario": "Lifestyle/Food",
-        "metrics": {"IM F1": 0.585, "RM→R Succ.": 1.000, "D F1": 0.840},
+        "id": "low-value-trimming",
+        "label": "Low-Value Content Trimming",
+        "summary": (
+            "Trimming longer low-value passages to make the spoken cut more "
+            "concise while retaining its main content."
+        ),
+        "focus": "D",
+        "cases": [
+            {
+                "id": "lifestyle-d",
+                "source": "case6_2",
+                "title": "Food review",
+                "scenario": "Lifestyle/Food",
+                "metrics": {
+                    "IM F1": 0.585,
+                    "RM→R Succ.": 1.000,
+                    "D F1": 0.840,
+                },
+            },
+            {
+                "id": "workweek-d",
+                "source": "case15_7",
+                "title": "Work-week vlog",
+                "scenario": "Daily Life",
+                "metrics": {
+                    "IM F1": 0.588,
+                    "RM→R Succ.": 0.500,
+                    "D F1": 0.840,
+                },
+            },
+        ],
     },
 ]
 
@@ -103,7 +181,7 @@ def extract_rm_pairs(text):
     return pairs
 
 
-def build_case(source_root, metadata):
+def build_case(source_root, metadata, focus):
     case_root = source_root / metadata["source"]
     gt_text = (case_root / "gt.txt").read_text(encoding="utf-8").strip()
     prediction = json.loads(
@@ -133,7 +211,7 @@ def build_case(source_root, metadata):
         "model": "Gemini 3.0 Pro",
         "privacyReviewed": True,
         "privacyNote": "Complete transcript reviewed for public display.",
-        "focus": "IM · RM→R · D",
+        "focus": focus,
         "originalSegments": parse_annotated_transcript(gt_text),
         "referenceTranscript": build_reference(gt_text),
         "modelEdits": model_edits,
@@ -148,24 +226,28 @@ def main():
     parser.add_argument(
         "--source-root",
         type=Path,
-        default=Path("../kdd_rough_cut_benchmark/asr_case_v2"),
+        default=Path(__file__).resolve().parents[2] / "asr_case_v2",
     )
     parser.add_argument(
         "--output",
         type=Path,
-        default=Path("data/speech_cases.json"),
+        default=Path(__file__).resolve().parents[1] / "data/speech_cases.json",
     )
     args = parser.parse_args()
 
     payload = {
-        "category": {
-            "id": "speech-cleanup-cases",
-            "label": "Speech Cleanup",
-            "summary": (
-                "High-alignment transcript-cleanup cases with complete inputs and outputs."
-            ),
-            "cases": [build_case(args.source_root, metadata) for metadata in CASE_METADATA],
-        }
+        "categories": [
+            {
+                "id": category["id"],
+                "label": category["label"],
+                "summary": category["summary"],
+                "cases": [
+                    build_case(args.source_root, metadata, category["focus"])
+                    for metadata in category["cases"]
+                ],
+            }
+            for category in SPEECH_CATEGORIES
+        ]
     }
     args.output.write_text(
         json.dumps(payload, ensure_ascii=False, indent=2) + "\n",

@@ -6,6 +6,7 @@ const state = {
   activeSetId: "set1",
   sortKey: "f1",
   sortDirection: "desc",
+  activeModalityId: "visual",
   activeCategoryId: "quality-progression",
   activeCaseId: "bakery-cafe",
 };
@@ -16,6 +17,8 @@ const elements = {
   leaderboardRankLabel: document.querySelector("#leaderboard-rank-label"),
   leaderboardDescription: document.querySelector("#leaderboard-description"),
   leaderboardTable: document.querySelector("#leaderboard-table"),
+  modalityTabs: document.querySelector("#case-modality-tabs"),
+  modalitySummary: document.querySelector("#case-modality-summary"),
   categoryTabs: document.querySelector("#case-category-tabs"),
   caseTabs: document.querySelector("#case-tabs"),
   categorySummary: document.querySelector("#case-category-summary"),
@@ -179,11 +182,39 @@ function renderLeaderboard() {
   renderLeaderboardTable();
 }
 
-function getExplorerCategories() {
+function getExplorerModalities() {
   return [
-    ...state.visualData.categories.map((category) => ({ ...category, type: "visual" })),
-    { ...state.speechData.category, type: "speech" },
+    {
+      id: "visual",
+      label: "Visual Rough-Cut",
+      summary:
+        "Across Model Comparison, Beyond the Reference, and User Requirements, these examples cover all six benchmark domains: outdoor vlogs, food, beauty/fashion, product/DIY, sports/games, and daily life.",
+      categories: state.visualData.categories.map((category) => ({
+        ...category,
+        type: "visual",
+      })),
+    },
+    {
+      id: "speech",
+      label: "Speech-Driven Rough-Cut",
+      summary:
+        "Complete ASR transcripts demonstrate filler removal, expression deduplication, and low-value content trimming.",
+      categories: state.speechData.categories.map((category) => ({
+        ...category,
+        type: "speech",
+      })),
+    },
   ];
+}
+
+function getActiveModality() {
+  return getExplorerModalities().find(
+    (modality) => modality.id === state.activeModalityId,
+  );
+}
+
+function getExplorerCategories() {
+  return getActiveModality().categories;
 }
 
 function getActiveCategory() {
@@ -198,6 +229,25 @@ function stopAllMedia() {
   document.querySelectorAll("video, audio").forEach((media) => {
     media.pause();
   });
+}
+
+function renderModalityTabs() {
+  elements.modalityTabs.replaceChildren();
+  const modalities = getExplorerModalities();
+
+  modalities.forEach((modality) => {
+    elements.modalityTabs.append(
+      makeTab(modality.label, modality.id === state.activeModalityId, () => {
+        stopAllMedia();
+        state.activeModalityId = modality.id;
+        state.activeCategoryId = modality.categories[0].id;
+        state.activeCaseId = modality.categories[0].cases[0].id;
+        renderExplorer();
+      }),
+    );
+  });
+
+  elements.modalitySummary.textContent = getActiveModality().summary;
 }
 
 function renderCategoryTabs() {
@@ -220,12 +270,8 @@ function renderCaseTabs() {
   elements.categorySummary.textContent = category.summary;
 
   category.cases.forEach((caseData, index) => {
-    const tabLabel =
-      category.id === "cross-domain"
-        ? caseData.domain || caseData.title
-        : `Case ${index + 1}`;
     elements.caseTabs.append(
-      makeTab(tabLabel, caseData.id === state.activeCaseId, () => {
+      makeTab(`Case ${index + 1}`, caseData.id === state.activeCaseId, () => {
         stopAllMedia();
         state.activeCaseId = caseData.id;
         renderCaseTabs();
@@ -320,21 +366,6 @@ function makePendingPanel(caseData) {
 function renderVisualCase(caseData, category) {
   const fragment = document.createDocumentFragment();
   fragment.append(makeCaseHeader(caseData, category));
-
-  if (caseData.displayMode === "gallery") {
-    if (!caseData.privacyReviewed || !caseData.galleryVideos?.length) {
-      fragment.append(makePendingPanel(caseData));
-      return fragment;
-    }
-
-    const gallerySection = makeElement("section", "media-section");
-    gallerySection.append(makeElement("h4", null, "Representative professional cut"));
-    const gallery = makeElement("div", "scenario-gallery-grid");
-    caseData.galleryVideos.forEach((video) => gallery.append(makeVideoCard(video)));
-    gallerySection.append(gallery);
-    fragment.append(gallerySection);
-    return fragment;
-  }
 
   if (caseData.requirement) {
     const requirement = makeElement("div", "requirement-band");
@@ -490,6 +521,7 @@ function renderCaseContent() {
 }
 
 function renderExplorer() {
+  renderModalityTabs();
   renderCategoryTabs();
   renderCaseTabs();
   renderCaseContent();
