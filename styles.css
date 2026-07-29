@@ -809,6 +809,10 @@ video {
 .media-label {
   min-height: 61px;
   padding: 9px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 
 .media-label strong,
@@ -831,6 +835,10 @@ video {
 
 .metric-chips {
   margin-top: 8px;
+}
+
+.media-label .metric-chips {
+  justify-content: center;
 }
 
 .metric-chip {
