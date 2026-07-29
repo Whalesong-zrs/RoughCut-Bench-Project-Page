@@ -220,8 +220,12 @@ function renderCaseTabs() {
   elements.categorySummary.textContent = category.summary;
 
   category.cases.forEach((caseData, index) => {
+    const tabLabel =
+      category.id === "cross-domain"
+        ? caseData.domain || caseData.title
+        : `Case ${index + 1}`;
     elements.caseTabs.append(
-      makeTab(`Case ${index + 1}`, caseData.id === state.activeCaseId, () => {
+      makeTab(tabLabel, caseData.id === state.activeCaseId, () => {
         stopAllMedia();
         state.activeCaseId = caseData.id;
         renderCaseTabs();
@@ -316,6 +320,21 @@ function makePendingPanel(caseData) {
 function renderVisualCase(caseData, category) {
   const fragment = document.createDocumentFragment();
   fragment.append(makeCaseHeader(caseData, category));
+
+  if (caseData.displayMode === "gallery") {
+    if (!caseData.privacyReviewed || !caseData.galleryVideos?.length) {
+      fragment.append(makePendingPanel(caseData));
+      return fragment;
+    }
+
+    const gallerySection = makeElement("section", "media-section");
+    gallerySection.append(makeElement("h4", null, "Representative professional cut"));
+    const gallery = makeElement("div", "scenario-gallery-grid");
+    caseData.galleryVideos.forEach((video) => gallery.append(makeVideoCard(video)));
+    gallerySection.append(gallery);
+    fragment.append(gallerySection);
+    return fragment;
+  }
 
   if (caseData.requirement) {
     const requirement = makeElement("div", "requirement-band");

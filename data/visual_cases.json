@@ -449,11 +449,41 @@
     {
       "id": "cross-domain",
       "label": "Visual Scenarios",
-      "summary": "Rough-cut results across different creation scenarios, including food, product/DIY, and sports/games.",
+      "summary": "Representative professional cuts from three visual creation scenarios; additional domains appear throughout the preceding demos.",
       "cases": [
-        {"id": "food-domain", "title": "Food", "domain": "Food", "privacyReviewed": false, "sourceVideos": [], "reference": null, "predictions": []},
-        {"id": "diy-domain", "title": "Product and DIY", "domain": "Product/DIY", "privacyReviewed": false, "sourceVideos": [], "reference": null, "predictions": []},
-        {"id": "sports-domain", "title": "Sports and games", "domain": "Sports/Games", "privacyReviewed": false, "sourceVideos": [], "reference": null, "predictions": []}
+        {
+          "id": "beauty-domain",
+          "title": "Skincare application sequence",
+          "domain": "Beauty/Fashion",
+          "displayMode": "gallery",
+          "privacyReviewed": true,
+          "privacyNote": "Face-free close-up footage; audio removed from the public derivative.",
+          "galleryVideos": [
+            {"label": "Professional Reference", "src": "assets/media/case-ordering-skincare/professional-reference.mp4", "poster": "assets/media/case-ordering-skincare/professional-reference.jpg"}
+          ]
+        },
+        {
+          "id": "diy-domain",
+          "title": "DIY material showcase",
+          "domain": "Product/DIY",
+          "displayMode": "gallery",
+          "privacyReviewed": true,
+          "privacyNote": "Face-free close-up footage; audio removed from the public derivative.",
+          "galleryVideos": [
+            {"label": "Professional Reference", "src": "assets/media/scenario-diy-materials/professional-reference.mp4", "poster": "assets/media/scenario-diy-materials/professional-reference.jpg"}
+          ]
+        },
+        {
+          "id": "food-domain",
+          "title": "Food preparation sequence",
+          "domain": "Food",
+          "displayMode": "gallery",
+          "privacyReviewed": true,
+          "privacyNote": "Face-free cooking footage; audio removed from the public derivative.",
+          "galleryVideos": [
+            {"label": "Professional Reference", "src": "assets/media/scenario-food-preparation/professional-reference.mp4", "poster": "assets/media/scenario-food-preparation/professional-reference.jpg"}
+          ]
+        }
       ]
     }
   ]

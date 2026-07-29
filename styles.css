@@ -763,6 +763,11 @@ video {
   gap: 13px;
 }
 
+.scenario-gallery-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 560px);
+}
+
 .media-item {
   min-width: 0;
   border: 1px solid var(--line-strong);
