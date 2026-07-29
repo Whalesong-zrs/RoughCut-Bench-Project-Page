@@ -311,23 +311,30 @@ video {
 
 .section-heading-row {
   display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 32px;
+  align-items: start;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .section-heading h2 {
   margin: 0;
   font-size: clamp(28px, 3.5vw, 41px);
   line-height: 1.15;
+  text-wrap: balance;
+}
+
+.heading-phrase {
+  white-space: nowrap;
 }
 
 .section-note {
-  max-width: 410px;
-  margin: 0 0 4px;
+  max-width: 720px;
+  margin: 0;
   color: var(--muted);
   font-size: 13px;
-  text-align: right;
+  line-height: 1.55;
+  text-align: left;
+  text-wrap: balance;
 }
 
 .overview-copy {
@@ -647,6 +654,7 @@ video {
   max-width: 480px;
   margin: 2px 0 0;
   text-align: right;
+  text-wrap: balance;
 }
 
 .case-content {
@@ -666,6 +674,7 @@ video {
   margin: 0 0 7px;
   font-size: 25px;
   line-height: 1.2;
+  text-wrap: balance;
 }
 
 .case-meta,
@@ -709,6 +718,7 @@ video {
   color: var(--muted);
   font-size: 12px;
   text-align: right;
+  text-wrap: balance;
 }
 
 .requirement-band {
@@ -749,7 +759,7 @@ video {
 
 .comparison-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 13px;
 }
 
@@ -1210,6 +1220,10 @@ a:focus-visible {
     font-size: 20px;
   }
 
+  .section-heading h2 {
+    font-size: clamp(21px, 6.6vw, 28px);
+  }
+
   .resource-actions {
     width: 100%;
   }
@@ -1232,6 +1246,21 @@ a:focus-visible {
     flex-direction: column;
     justify-content: center;
     gap: 4px;
+  }
+}
+
+@media (max-width: 360px) {
+  .nav-links {
+    gap: 0;
+  }
+
+  .nav-links a:nth-child(2) {
+    display: none;
+  }
+
+  .affiliations span {
+    max-width: 100%;
+    white-space: normal;
   }
 }
 
