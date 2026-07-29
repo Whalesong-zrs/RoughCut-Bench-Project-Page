@@ -414,7 +414,36 @@
             {"label": "Seed-2.0-Lite", "src": "assets/media/case-content-camera/seed-2.0-lite.mp4", "poster": "assets/media/case-content-camera/seed-2.0-lite.jpg", "displayModelOnly": true}
           ]
         },
-        {"id": "ordering", "title": "Source-video ordering requirement", "domain": "Daily Life", "requirement": "Place the finished result first, then show the preparation process.", "privacyReviewed": false, "sourceVideos": [], "reference": null, "predictions": []}
+        {
+          "id": "ordering-skincare",
+          "title": "Source-video ordering requirement",
+          "domain": "Beauty/Fashion",
+          "requirement": "Squeeze essence onto the back of the hand, apply OSM lotion, squeeze body lotion into the palm, and finally apply body lotion.",
+          "privacyReviewed": true,
+          "privacyNote": "Face-free close-up footage; audio removed from all public derivatives.",
+          "scoreNote": "The requirement specifies a four-step application sequence.",
+          "sourceVideos": [
+            {"label": "Source 01", "src": "assets/media/case-ordering-skincare/source-01.mp4", "poster": "assets/media/case-ordering-skincare/source-01.jpg"},
+            {"label": "Source 02", "src": "assets/media/case-ordering-skincare/source-02.mp4", "poster": "assets/media/case-ordering-skincare/source-02.jpg"},
+            {"label": "Source 03", "src": "assets/media/case-ordering-skincare/source-03.mp4", "poster": "assets/media/case-ordering-skincare/source-03.jpg"},
+            {"label": "Source 04", "src": "assets/media/case-ordering-skincare/source-04.mp4", "poster": "assets/media/case-ordering-skincare/source-04.jpg"}
+          ],
+          "reference": {
+            "label": "Professional Reference",
+            "src": "assets/media/case-ordering-skincare/professional-reference.mp4",
+            "poster": "assets/media/case-ordering-skincare/professional-reference.jpg"
+          },
+          "predictions": [
+            {"label": "Gemini 2.5 Pro", "src": "assets/media/case-ordering-skincare/gemini-2.5-pro.mp4", "poster": "assets/media/case-ordering-skincare/gemini-2.5-pro.jpg", "displayModelOnly": true},
+            {"label": "Gemini 3.0 Pro", "src": "assets/media/case-ordering-skincare/gemini-3-pro.mp4", "poster": "assets/media/case-ordering-skincare/gemini-3-pro.jpg", "displayModelOnly": true},
+            {"label": "GPT-5.4", "src": "assets/media/case-ordering-skincare/gpt-5.4.mp4", "poster": "assets/media/case-ordering-skincare/gpt-5.4.jpg", "displayModelOnly": true},
+            {"label": "GPT-5.5", "src": "assets/media/case-ordering-skincare/gpt-5.5.mp4", "poster": "assets/media/case-ordering-skincare/gpt-5.5.jpg", "displayModelOnly": true},
+            {"label": "Qwen3.5-Plus", "src": "assets/media/case-ordering-skincare/qwen-3.5-plus.mp4", "poster": "assets/media/case-ordering-skincare/qwen-3.5-plus.jpg", "displayModelOnly": true},
+            {"label": "Qwen3.7-Plus", "src": "assets/media/case-ordering-skincare/qwen-3.7-plus.mp4", "poster": "assets/media/case-ordering-skincare/qwen-3.7-plus.jpg", "displayModelOnly": true},
+            {"label": "GLM-5V-Turbo", "src": "assets/media/case-ordering-skincare/glm-5v-turbo.mp4", "poster": "assets/media/case-ordering-skincare/glm-5v-turbo.jpg", "displayModelOnly": true},
+            {"label": "Seed-2.0-Lite", "src": "assets/media/case-ordering-skincare/seed-2.0-lite.mp4", "poster": "assets/media/case-ordering-skincare/seed-2.0-lite.jpg", "displayModelOnly": true}
+          ]
+        }
       ]
     },
     {
