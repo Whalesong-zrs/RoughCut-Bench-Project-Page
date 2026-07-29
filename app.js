@@ -7,7 +7,7 @@ const state = {
   sortKey: "f1",
   sortDirection: "desc",
   activeCategoryId: "quality-progression",
-  activeCaseId: "food-preparation",
+  activeCaseId: "bakery-cafe",
 };
 
 const elements = {
@@ -342,7 +342,10 @@ function renderVisualCase(caseData, category) {
     comparison.append(makeVideoCard(caseData.reference, "Professional cut"));
   }
   caseData.predictions.forEach((prediction) => {
-    comparison.append(makeVideoCard(prediction, `${prediction.label} · ${prediction.model}`));
+    const secondaryLabel = prediction.displayModelOnly
+      ? undefined
+      : [prediction.label, prediction.model].filter(Boolean).join(" · ");
+    comparison.append(makeVideoCard(prediction, secondaryLabel));
   });
   comparisonSection.append(comparison);
 

@@ -2,9 +2,194 @@
   "categories": [
     {
       "id": "quality-progression",
-      "label": "Quality Progression",
-      "summary": "Compare outputs from models with lower, middle, and higher benchmark-level visual-quality scores.",
+      "label": "Model Comparison",
+      "summary": "Compare cuts produced by different LVLMs from the same source videos.",
       "cases": [
+        {
+          "id": "bakery-cafe",
+          "title": "Bakery and cafe sequence",
+          "domain": "Food",
+          "privacyReviewed": true,
+          "privacyNote": "No clearly identifiable faces; audio removed from all public derivatives.",
+          "scoreNote": "Model cuts are ordered by F1 from high to low.",
+          "sourceVideos": [
+            {
+              "label": "Source 01",
+              "src": "assets/media/case-bakery/source-01.mp4",
+              "poster": "assets/media/case-bakery/source-01.jpg"
+            },
+            {
+              "label": "Source 02",
+              "src": "assets/media/case-bakery/source-02.mp4",
+              "poster": "assets/media/case-bakery/source-02.jpg"
+            },
+            {
+              "label": "Source 03",
+              "src": "assets/media/case-bakery/source-03.mp4",
+              "poster": "assets/media/case-bakery/source-03.jpg"
+            },
+            {
+              "label": "Source 04",
+              "src": "assets/media/case-bakery/source-04.mp4",
+              "poster": "assets/media/case-bakery/source-04.jpg"
+            },
+            {
+              "label": "Source 05",
+              "src": "assets/media/case-bakery/source-05.mp4",
+              "poster": "assets/media/case-bakery/source-05.jpg"
+            },
+            {
+              "label": "Source 06",
+              "src": "assets/media/case-bakery/source-06.mp4",
+              "poster": "assets/media/case-bakery/source-06.jpg"
+            },
+            {
+              "label": "Source 07",
+              "src": "assets/media/case-bakery/source-07.mp4",
+              "poster": "assets/media/case-bakery/source-07.jpg"
+            },
+            {
+              "label": "Source 08",
+              "src": "assets/media/case-bakery/source-08.mp4",
+              "poster": "assets/media/case-bakery/source-08.jpg"
+            },
+            {
+              "label": "Source 09",
+              "src": "assets/media/case-bakery/source-09.mp4",
+              "poster": "assets/media/case-bakery/source-09.jpg"
+            },
+            {
+              "label": "Source 10",
+              "src": "assets/media/case-bakery/source-10.mp4",
+              "poster": "assets/media/case-bakery/source-10.jpg"
+            },
+            {
+              "label": "Source 11",
+              "src": "assets/media/case-bakery/source-11.mp4",
+              "poster": "assets/media/case-bakery/source-11.jpg"
+            },
+            {
+              "label": "Source 12",
+              "src": "assets/media/case-bakery/source-12.mp4",
+              "poster": "assets/media/case-bakery/source-12.jpg"
+            },
+            {
+              "label": "Source 13",
+              "src": "assets/media/case-bakery/source-13.mp4",
+              "poster": "assets/media/case-bakery/source-13.jpg"
+            },
+            {
+              "label": "Source 14",
+              "src": "assets/media/case-bakery/source-14.mp4",
+              "poster": "assets/media/case-bakery/source-14.jpg"
+            },
+            {
+              "label": "Source 15",
+              "src": "assets/media/case-bakery/source-15.mp4",
+              "poster": "assets/media/case-bakery/source-15.jpg"
+            },
+            {
+              "label": "Source 16",
+              "src": "assets/media/case-bakery/source-16.mp4",
+              "poster": "assets/media/case-bakery/source-16.jpg"
+            },
+            {
+              "label": "Source 17",
+              "src": "assets/media/case-bakery/source-17.mp4",
+              "poster": "assets/media/case-bakery/source-17.jpg"
+            },
+            {
+              "label": "Source 18",
+              "src": "assets/media/case-bakery/source-18.mp4",
+              "poster": "assets/media/case-bakery/source-18.jpg"
+            },
+            {
+              "label": "Source 19",
+              "src": "assets/media/case-bakery/source-19.mp4",
+              "poster": "assets/media/case-bakery/source-19.jpg"
+            },
+            {
+              "label": "Source 20",
+              "src": "assets/media/case-bakery/source-20.mp4",
+              "poster": "assets/media/case-bakery/source-20.jpg"
+            },
+            {
+              "label": "Source 21",
+              "src": "assets/media/case-bakery/source-21.mp4",
+              "poster": "assets/media/case-bakery/source-21.jpg"
+            },
+            {
+              "label": "Source 22",
+              "src": "assets/media/case-bakery/source-22.mp4",
+              "poster": "assets/media/case-bakery/source-22.jpg"
+            },
+            {
+              "label": "Source 23",
+              "src": "assets/media/case-bakery/source-23.mp4",
+              "poster": "assets/media/case-bakery/source-23.jpg"
+            },
+            {
+              "label": "Source 24",
+              "src": "assets/media/case-bakery/source-24.mp4",
+              "poster": "assets/media/case-bakery/source-24.jpg"
+            }
+          ],
+          "reference": {
+            "label": "Professional Reference",
+            "src": "assets/media/case-bakery/professional-reference.mp4",
+            "poster": "assets/media/case-bakery/professional-reference.jpg"
+          },
+          "predictions": [
+            {
+              "label": "Gemini 2.5 Pro",
+              "src": "assets/media/case-bakery/gemini-2.5-pro.mp4",
+              "poster": "assets/media/case-bakery/gemini-2.5-pro.jpg",
+              "displayModelOnly": true
+            },
+            {
+              "label": "Gemini 3.0 Pro",
+              "src": "assets/media/case-bakery/gemini-3-pro.mp4",
+              "poster": "assets/media/case-bakery/gemini-3-pro.jpg",
+              "displayModelOnly": true
+            },
+            {
+              "label": "GLM-5V-Turbo",
+              "src": "assets/media/case-bakery/glm-5v-turbo.mp4",
+              "poster": "assets/media/case-bakery/glm-5v-turbo.jpg",
+              "displayModelOnly": true
+            },
+            {
+              "label": "GPT-5.4",
+              "src": "assets/media/case-bakery/gpt-5.4.mp4",
+              "poster": "assets/media/case-bakery/gpt-5.4.jpg",
+              "displayModelOnly": true
+            },
+            {
+              "label": "GPT-5.5",
+              "src": "assets/media/case-bakery/gpt-5.5.mp4",
+              "poster": "assets/media/case-bakery/gpt-5.5.jpg",
+              "displayModelOnly": true
+            },
+            {
+              "label": "Qwen3.7-Plus",
+              "src": "assets/media/case-bakery/qwen-3.7-plus.mp4",
+              "poster": "assets/media/case-bakery/qwen-3.7-plus.jpg",
+              "displayModelOnly": true
+            },
+            {
+              "label": "Seed-2.0-Lite",
+              "src": "assets/media/case-bakery/seed-2.0-lite.mp4",
+              "poster": "assets/media/case-bakery/seed-2.0-lite.jpg",
+              "displayModelOnly": true
+            },
+            {
+              "label": "Qwen3.5-Plus",
+              "src": "assets/media/case-bakery/qwen-3.5-plus.mp4",
+              "poster": "assets/media/case-bakery/qwen-3.5-plus.jpg",
+              "displayModelOnly": true
+            }
+          ]
+        },
         {
           "id": "food-preparation",
           "title": "Food preparation sequence",
@@ -66,8 +251,8 @@
     },
     {
       "id": "multiple-valid",
-      "label": "Multiple Valid Cuts",
-      "summary": "Cases where annotation agreement and rendered-cut quality provide different signals.",
+      "label": "Beyond the Reference",
+      "summary": "A model cut can differ from the professional reference while still receiving a high rendered-cut quality score.",
       "cases": [
         {"id": "low-f1", "title": "Alternative highlight coverage", "domain": "Daily Life", "privacyReviewed": false, "sourceVideos": [], "reference": null, "predictions": [], "selectionRule": "Low highlight F1, high Agent Overall"},
         {"id": "low-tau", "title": "Alternative source-video order", "domain": "Outdoor Vlog", "privacyReviewed": false, "sourceVideos": [], "reference": null, "predictions": [], "selectionRule": "Low Kendall's τ, high Agent Overall"},
@@ -76,8 +261,8 @@
     },
     {
       "id": "prompt-following",
-      "label": "Prompt Following",
-      "summary": "Requirement-constrained cuts covering duration, content selection, and source-video order.",
+      "label": "User Requirements",
+      "summary": "Cuts produced under duration, content retain/remove, or source-video ordering requirements.",
       "cases": [
         {"id": "duration", "title": "Target-duration requirement", "domain": "Food", "requirement": "Create a cut close to the requested target duration.", "privacyReviewed": false, "sourceVideos": [], "reference": null, "predictions": []},
         {"id": "selection", "title": "Content retain/remove requirement", "domain": "Product/DIY", "requirement": "Retain the product close-ups and remove repeated setup shots.", "privacyReviewed": false, "sourceVideos": [], "reference": null, "predictions": []},
@@ -86,8 +271,8 @@
     },
     {
       "id": "cross-domain",
-      "label": "Cross-Domain",
-      "summary": "Privacy-reviewed examples from distinct real-world creation domains.",
+      "label": "Visual Scenarios",
+      "summary": "Rough-cut results across different creation scenarios, including food, product/DIY, and sports/games.",
       "cases": [
         {"id": "food-domain", "title": "Food", "domain": "Food", "privacyReviewed": false, "sourceVideos": [], "reference": null, "predictions": []},
         {"id": "diy-domain", "title": "Product and DIY", "domain": "Product/DIY", "privacyReviewed": false, "sourceVideos": [], "reference": null, "predictions": []},

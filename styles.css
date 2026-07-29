@@ -618,30 +618,24 @@ video {
 .family-legend .family-other { background: #faf7ff; }
 
 .explorer-categories {
-  border-bottom: 1px solid var(--line-strong);
+  gap: 8px;
+  padding-bottom: 10px;
 }
 
 .explorer-categories button {
-  position: relative;
   min-width: max-content;
-  padding: 12px 18px 15px;
+  padding: 10px 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: 5px;
   color: var(--muted);
-  background: transparent;
+  background: #fff;
   font-size: 13px;
   font-weight: 750;
 }
 
 .explorer-categories button[aria-selected="true"] {
-  color: var(--blue-deep);
-}
-
-.explorer-categories button[aria-selected="true"]::after {
-  content: "";
-  position: absolute;
-  right: 15px;
-  bottom: -1px;
-  left: 15px;
-  height: 3px;
+  border-color: var(--blue);
+  color: #fff;
   background: var(--blue);
 }
 
