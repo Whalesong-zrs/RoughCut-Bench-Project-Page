@@ -356,7 +356,36 @@
       "label": "User Requirements",
       "summary": "Cuts produced under duration, content retain/remove, or source-video ordering requirements.",
       "cases": [
-        {"id": "duration", "title": "Target-duration requirement", "domain": "Food", "requirement": "Create a cut close to the requested target duration.", "privacyReviewed": false, "sourceVideos": [], "reference": null, "predictions": []},
+        {
+          "id": "duration-coffee",
+          "title": "Target-duration constraint",
+          "domain": "Food",
+          "requirement": "Can you make a short edit, maybe 10 secs?",
+          "privacyReviewed": true,
+          "privacyNote": "Face-free visual material; audio removed from all public derivatives.",
+          "scoreNote": "All displayed cuts are approximately 10 seconds long.",
+          "sourceVideos": [
+            {"label": "Source 01", "src": "assets/media/case-duration-coffee/source-01.mp4", "poster": "assets/media/case-duration-coffee/source-01.jpg"},
+            {"label": "Source 02", "src": "assets/media/case-duration-coffee/source-02.mp4", "poster": "assets/media/case-duration-coffee/source-02.jpg"},
+            {"label": "Source 03", "src": "assets/media/case-duration-coffee/source-03.mp4", "poster": "assets/media/case-duration-coffee/source-03.jpg"},
+            {"label": "Source 04", "src": "assets/media/case-duration-coffee/source-04.mp4", "poster": "assets/media/case-duration-coffee/source-04.jpg"}
+          ],
+          "reference": {
+            "label": "Professional Reference",
+            "src": "assets/media/case-duration-coffee/professional-reference.mp4",
+            "poster": "assets/media/case-duration-coffee/professional-reference.jpg"
+          },
+          "predictions": [
+            {"label": "Gemini 2.5 Pro", "src": "assets/media/case-duration-coffee/gemini-2.5-pro.mp4", "poster": "assets/media/case-duration-coffee/gemini-2.5-pro.jpg", "displayModelOnly": true},
+            {"label": "Gemini 3.0 Pro", "src": "assets/media/case-duration-coffee/gemini-3-pro.mp4", "poster": "assets/media/case-duration-coffee/gemini-3-pro.jpg", "displayModelOnly": true},
+            {"label": "GPT-5.4", "src": "assets/media/case-duration-coffee/gpt-5.4.mp4", "poster": "assets/media/case-duration-coffee/gpt-5.4.jpg", "displayModelOnly": true},
+            {"label": "GPT-5.5", "src": "assets/media/case-duration-coffee/gpt-5.5.mp4", "poster": "assets/media/case-duration-coffee/gpt-5.5.jpg", "displayModelOnly": true},
+            {"label": "Qwen3.5-Plus", "src": "assets/media/case-duration-coffee/qwen-3.5-plus.mp4", "poster": "assets/media/case-duration-coffee/qwen-3.5-plus.jpg", "displayModelOnly": true},
+            {"label": "Qwen3.7-Plus", "src": "assets/media/case-duration-coffee/qwen-3.7-plus.mp4", "poster": "assets/media/case-duration-coffee/qwen-3.7-plus.jpg", "displayModelOnly": true},
+            {"label": "GLM-5V-Turbo", "src": "assets/media/case-duration-coffee/glm-5v-turbo.mp4", "poster": "assets/media/case-duration-coffee/glm-5v-turbo.jpg", "displayModelOnly": true},
+            {"label": "Seed-2.0-Lite", "src": "assets/media/case-duration-coffee/seed-2.0-lite.mp4", "poster": "assets/media/case-duration-coffee/seed-2.0-lite.jpg", "displayModelOnly": true}
+          ]
+        },
         {"id": "selection", "title": "Content retain/remove requirement", "domain": "Product/DIY", "requirement": "Retain the product close-ups and remove repeated setup shots.", "privacyReviewed": false, "sourceVideos": [], "reference": null, "predictions": []},
         {"id": "ordering", "title": "Source-video ordering requirement", "domain": "Daily Life", "requirement": "Place the finished result first, then show the preparation process.", "privacyReviewed": false, "sourceVideos": [], "reference": null, "predictions": []}
       ]
