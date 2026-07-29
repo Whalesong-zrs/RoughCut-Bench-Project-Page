@@ -253,11 +253,37 @@
     {
       "id": "multiple-valid",
       "label": "Beyond the Reference",
-      "summary": "A model cut can differ from the professional reference while still receiving a high rendered-cut quality score.",
+      "summary": "Different source-video orders can produce coherent cuts even when they disagree with a single professional reference.",
       "cases": [
-        {"id": "low-f1", "title": "Alternative highlight coverage", "domain": "Daily Life", "privacyReviewed": false, "sourceVideos": [], "reference": null, "predictions": [], "selectionRule": "Low highlight F1, high Agent Overall"},
-        {"id": "low-tau", "title": "Alternative source-video order", "domain": "Outdoor Vlog", "privacyReviewed": false, "sourceVideos": [], "reference": null, "predictions": [], "selectionRule": "Low Kendall's τ, high Agent Overall"},
-        {"id": "low-both", "title": "Alternative selection and order", "domain": "Sports/Games", "privacyReviewed": false, "sourceVideos": [], "reference": null, "predictions": [], "selectionRule": "Low F1 and Kendall's τ, high Agent Overall"}
+        {
+          "id": "alternative-toy-stunts",
+          "title": "Alternative toy-stunt sequence",
+          "domain": "Product/DIY",
+          "privacyReviewed": true,
+          "privacyNote": "Face-free visual material; audio removed from all public derivatives.",
+          "scoreNote": "Both cuts retain the same five source videos but arrange them into different coherent sequences.",
+          "selectionRule": "Multiple acceptable cut plans",
+          "sourceVideos": [
+            {"label": "Source 01", "src": "assets/media/case-alternative-toy-stunts/source-01.mp4", "poster": "assets/media/case-alternative-toy-stunts/source-01.jpg"},
+            {"label": "Source 02", "src": "assets/media/case-alternative-toy-stunts/source-02.mp4", "poster": "assets/media/case-alternative-toy-stunts/source-02.jpg"},
+            {"label": "Source 03", "src": "assets/media/case-alternative-toy-stunts/source-03.mp4", "poster": "assets/media/case-alternative-toy-stunts/source-03.jpg"},
+            {"label": "Source 04", "src": "assets/media/case-alternative-toy-stunts/source-04.mp4", "poster": "assets/media/case-alternative-toy-stunts/source-04.jpg"},
+            {"label": "Source 05", "src": "assets/media/case-alternative-toy-stunts/source-05.mp4", "poster": "assets/media/case-alternative-toy-stunts/source-05.jpg"}
+          ],
+          "reference": {
+            "label": "Professional Reference",
+            "src": "assets/media/case-alternative-toy-stunts/professional-reference.mp4",
+            "poster": "assets/media/case-alternative-toy-stunts/professional-reference.jpg"
+          },
+          "predictions": [
+            {
+              "label": "Gemini 3.0 Pro",
+              "src": "assets/media/case-alternative-toy-stunts/gemini-3-pro.mp4",
+              "poster": "assets/media/case-alternative-toy-stunts/gemini-3-pro.jpg",
+              "displayModelOnly": true
+            }
+          ]
+        }
       ]
     },
     {
