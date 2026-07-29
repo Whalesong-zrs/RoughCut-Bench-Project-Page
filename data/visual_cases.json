@@ -261,7 +261,7 @@
           "domain": "Product/DIY",
           "privacyReviewed": true,
           "privacyNote": "Face-free visual material; audio removed from all public derivatives.",
-          "scoreNote": "Both cuts retain the same five source videos but arrange them into different coherent sequences.",
+          "scoreNote": "The displayed cuts retain the same five source videos but arrange them into different coherent sequences.",
           "selectionRule": "Multiple acceptable cut plans",
           "sourceVideos": [
             {"label": "Source 01", "src": "assets/media/case-alternative-toy-stunts/source-01.mp4", "poster": "assets/media/case-alternative-toy-stunts/source-01.jpg"},
@@ -276,12 +276,14 @@
             "poster": "assets/media/case-alternative-toy-stunts/professional-reference.jpg"
           },
           "predictions": [
-            {
-              "label": "Gemini 3.0 Pro",
-              "src": "assets/media/case-alternative-toy-stunts/gemini-3-pro.mp4",
-              "poster": "assets/media/case-alternative-toy-stunts/gemini-3-pro.jpg",
-              "displayModelOnly": true
-            }
+            {"label": "Gemini 2.5 Pro", "src": "assets/media/case-alternative-toy-stunts/gemini-2.5-pro.mp4", "poster": "assets/media/case-alternative-toy-stunts/gemini-2.5-pro.jpg", "displayModelOnly": true},
+            {"label": "Gemini 3.0 Pro", "src": "assets/media/case-alternative-toy-stunts/gemini-3-pro.mp4", "poster": "assets/media/case-alternative-toy-stunts/gemini-3-pro.jpg", "displayModelOnly": true},
+            {"label": "GPT-5.4", "src": "assets/media/case-alternative-toy-stunts/gpt-5.4.mp4", "poster": "assets/media/case-alternative-toy-stunts/gpt-5.4.jpg", "displayModelOnly": true},
+            {"label": "GPT-5.5", "src": "assets/media/case-alternative-toy-stunts/gpt-5.5.mp4", "poster": "assets/media/case-alternative-toy-stunts/gpt-5.5.jpg", "displayModelOnly": true},
+            {"label": "Qwen3.5-Plus", "src": "assets/media/case-alternative-toy-stunts/qwen-3.5-plus.mp4", "poster": "assets/media/case-alternative-toy-stunts/qwen-3.5-plus.jpg", "displayModelOnly": true},
+            {"label": "Qwen3.7-Plus", "src": "assets/media/case-alternative-toy-stunts/qwen-3.7-plus.mp4", "poster": "assets/media/case-alternative-toy-stunts/qwen-3.7-plus.jpg", "displayModelOnly": true},
+            {"label": "GLM-5V-Turbo", "src": "assets/media/case-alternative-toy-stunts/glm-5v-turbo.mp4", "poster": "assets/media/case-alternative-toy-stunts/glm-5v-turbo.jpg", "displayModelOnly": true},
+            {"label": "Seed-2.0-Lite", "src": "assets/media/case-alternative-toy-stunts/seed-2.0-lite.mp4", "poster": "assets/media/case-alternative-toy-stunts/seed-2.0-lite.jpg", "displayModelOnly": true}
           ]
         },
         {
@@ -290,9 +292,8 @@
           "domain": "Daily Life",
           "privacyReviewed": true,
           "privacyNote": "No clearly identifiable faces; audio removed from all public derivatives.",
-          "scoreNote": "All displayed cuts satisfy the requested opening and approximate duration but arrange the remaining videos differently.",
+          "scoreNote": "The displayed cuts arrange the same seven source videos into different coherent sequences.",
           "selectionRule": "Multiple acceptable cut plans",
-          "requirement": "Make it around 15 seconds. Start with the cat coffee art.",
           "sourceVideos": [
             {"label": "Source 01", "src": "assets/media/case-alternative-travel-day/source-01.mp4", "poster": "assets/media/case-alternative-travel-day/source-01.jpg"},
             {"label": "Source 02", "src": "assets/media/case-alternative-travel-day/source-02.mp4", "poster": "assets/media/case-alternative-travel-day/source-02.jpg"},
@@ -308,18 +309,14 @@
             "poster": "assets/media/case-alternative-travel-day/professional-reference.jpg"
           },
           "predictions": [
-            {
-              "label": "GLM-5V-Turbo",
-              "src": "assets/media/case-alternative-travel-day/glm-5v-turbo.mp4",
-              "poster": "assets/media/case-alternative-travel-day/glm-5v-turbo.jpg",
-              "displayModelOnly": true
-            },
-            {
-              "label": "Qwen3.5-Plus",
-              "src": "assets/media/case-alternative-travel-day/qwen-3.5-plus.mp4",
-              "poster": "assets/media/case-alternative-travel-day/qwen-3.5-plus.jpg",
-              "displayModelOnly": true
-            }
+            {"label": "Gemini 2.5 Pro", "src": "assets/media/case-alternative-travel-day/gemini-2.5-pro.mp4", "poster": "assets/media/case-alternative-travel-day/gemini-2.5-pro.jpg", "displayModelOnly": true},
+            {"label": "Gemini 3.0 Pro", "src": "assets/media/case-alternative-travel-day/gemini-3-pro.mp4", "poster": "assets/media/case-alternative-travel-day/gemini-3-pro.jpg", "displayModelOnly": true},
+            {"label": "GPT-5.4", "src": "assets/media/case-alternative-travel-day/gpt-5.4.mp4", "poster": "assets/media/case-alternative-travel-day/gpt-5.4.jpg", "displayModelOnly": true},
+            {"label": "GPT-5.5", "src": "assets/media/case-alternative-travel-day/gpt-5.5.mp4", "poster": "assets/media/case-alternative-travel-day/gpt-5.5.jpg", "displayModelOnly": true},
+            {"label": "Qwen3.5-Plus", "src": "assets/media/case-alternative-travel-day/qwen-3.5-plus.mp4", "poster": "assets/media/case-alternative-travel-day/qwen-3.5-plus.jpg", "displayModelOnly": true},
+            {"label": "Qwen3.7-Plus", "src": "assets/media/case-alternative-travel-day/qwen-3.7-plus.mp4", "poster": "assets/media/case-alternative-travel-day/qwen-3.7-plus.jpg", "displayModelOnly": true},
+            {"label": "GLM-5V-Turbo", "src": "assets/media/case-alternative-travel-day/glm-5v-turbo.mp4", "poster": "assets/media/case-alternative-travel-day/glm-5v-turbo.jpg", "displayModelOnly": true},
+            {"label": "Seed-2.0-Lite", "src": "assets/media/case-alternative-travel-day/seed-2.0-lite.mp4", "poster": "assets/media/case-alternative-travel-day/seed-2.0-lite.jpg", "displayModelOnly": true}
           ]
         },
         {
@@ -330,7 +327,6 @@
           "privacyNote": "Participants are not identifiable at the displayed distance; audio removed from all public derivatives.",
           "scoreNote": "The displayed cuts select highlight moments from the same four videos with different boundaries and ordering.",
           "selectionRule": "Multiple acceptable cut plans",
-          "requirement": "Keep the highlight moments of the hits.",
           "sourceVideos": [
             {"label": "Source 01", "src": "assets/media/case-alternative-volleyball/source-01.mp4", "poster": "assets/media/case-alternative-volleyball/source-01.jpg"},
             {"label": "Source 02", "src": "assets/media/case-alternative-volleyball/source-02.mp4", "poster": "assets/media/case-alternative-volleyball/source-02.jpg"},
@@ -343,18 +339,14 @@
             "poster": "assets/media/case-alternative-volleyball/professional-reference.jpg"
           },
           "predictions": [
-            {
-              "label": "Qwen3.5-Plus",
-              "src": "assets/media/case-alternative-volleyball/qwen-3.5-plus.mp4",
-              "poster": "assets/media/case-alternative-volleyball/qwen-3.5-plus.jpg",
-              "displayModelOnly": true
-            },
-            {
-              "label": "Qwen3.7-Plus",
-              "src": "assets/media/case-alternative-volleyball/qwen-3.7-plus.mp4",
-              "poster": "assets/media/case-alternative-volleyball/qwen-3.7-plus.jpg",
-              "displayModelOnly": true
-            }
+            {"label": "Gemini 2.5 Pro", "src": "assets/media/case-alternative-volleyball/gemini-2.5-pro.mp4", "poster": "assets/media/case-alternative-volleyball/gemini-2.5-pro.jpg", "displayModelOnly": true},
+            {"label": "Gemini 3.0 Pro", "src": "assets/media/case-alternative-volleyball/gemini-3-pro.mp4", "poster": "assets/media/case-alternative-volleyball/gemini-3-pro.jpg", "displayModelOnly": true},
+            {"label": "GPT-5.4", "src": "assets/media/case-alternative-volleyball/gpt-5.4.mp4", "poster": "assets/media/case-alternative-volleyball/gpt-5.4.jpg", "displayModelOnly": true},
+            {"label": "GPT-5.5", "src": "assets/media/case-alternative-volleyball/gpt-5.5.mp4", "poster": "assets/media/case-alternative-volleyball/gpt-5.5.jpg", "displayModelOnly": true},
+            {"label": "Qwen3.5-Plus", "src": "assets/media/case-alternative-volleyball/qwen-3.5-plus.mp4", "poster": "assets/media/case-alternative-volleyball/qwen-3.5-plus.jpg", "displayModelOnly": true},
+            {"label": "Qwen3.7-Plus", "src": "assets/media/case-alternative-volleyball/qwen-3.7-plus.mp4", "poster": "assets/media/case-alternative-volleyball/qwen-3.7-plus.jpg", "displayModelOnly": true},
+            {"label": "GLM-5V-Turbo", "src": "assets/media/case-alternative-volleyball/glm-5v-turbo.mp4", "poster": "assets/media/case-alternative-volleyball/glm-5v-turbo.jpg", "displayModelOnly": true},
+            {"label": "Seed-2.0-Lite", "src": "assets/media/case-alternative-volleyball/seed-2.0-lite.mp4", "poster": "assets/media/case-alternative-volleyball/seed-2.0-lite.jpg", "displayModelOnly": true}
           ]
         }
       ]
