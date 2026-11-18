@@ -3,7 +3,7 @@
     {
       "id": "visual-annotation",
       "label": "Visual Annotation",
-      "description": "Agreement between predicted cut plans and professional annotations.",
+      "description": "Agreement between predicted cut plans and professional annotations. Visual Set-1 contains 62 general rough-cut cases; Visual Set-2 contains 39 requirement-constrained cases with user instructions.",
       "defaultSet": "set1",
       "sets": [
         {
@@ -55,7 +55,7 @@
     {
       "id": "visual-quality",
       "label": "Visual Quality",
-      "description": "Human-aligned evaluation of rendered cuts on a 1–5 scale.",
+      "description": "Human-aligned evaluation of rendered cuts on a 1–5 scale. Visual Set-1 contains 62 general rough-cut cases; Visual Set-2 contains 39 requirement-constrained cases with user instructions.",
       "defaultSet": "set1",
       "sets": [
         {

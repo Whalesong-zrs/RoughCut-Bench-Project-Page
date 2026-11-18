@@ -179,6 +179,13 @@ video {
   line-height: 1.35;
 }
 
+.hero-acceptance {
+  margin: 0 0 24px;
+  color: var(--blue-deep);
+  font-size: 15px;
+  font-weight: 700;
+}
+
 .author-list {
   max-width: 920px;
   display: flex;
@@ -264,6 +271,7 @@ video {
   color: var(--ink);
   background: #fff;
   text-align: center;
+  text-decoration: none;
 }
 
 .resource-button svg {
@@ -288,6 +296,12 @@ video {
 .resource-button:disabled {
   opacity: 1;
   cursor: not-allowed;
+}
+
+.resource-button[href]:hover,
+.resource-button[href]:focus-visible {
+  border-color: var(--blue);
+  color: var(--blue-deep);
 }
 
 .section {
